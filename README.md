@@ -8,7 +8,7 @@ When you send the challenge card in the Hello Badminton. Then choose the BADMINT
 
 HELLO BADMINTON  
 ID: victoria0406@kaist.ac.kr  
-Pw: 
+Pw: 12340987
 
 BADMINTON LOVER  
 ID: kmin6381@kaist.ac.kr  
