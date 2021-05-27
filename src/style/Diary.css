@@ -1,0 +1,132 @@
+.theme{
+    position: absolute;
+    left: 150px;
+    top: 30px;
+    font-size: 80px;
+    font-weight: bolder;
+    font-family: 'Indie Flower', cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+ul.mylist{
+    list-style: none;
+    
+    padding: px;
+    max-width: 1800px;
+    width: 100%;
+    position: absolute;
+    left: 20px;
+    top: 200px;
+    
+}
+
+ul.mylist li {
+    display: inline-block;
+    padding: 5px;
+    margin-bottom: 150px;
+    margin-left: 150px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.diarytable_d{
+    position: relative;
+    width: 400px;
+    height:400px;
+    background: #CCCCCC;
+    border-radius: 20px 20px 20px 20px;
+    border-collapse: collapse;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+.img{
+    height: 280px;
+    text-align: center;
+    vertical-align: bottom;
+    border-radius: 20px 20px 0px 0px;
+}
+.set_img{
+    
+    height: 230px;
+    width: 300px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.date{
+    vertical-align: bottom;
+    height: 30px;
+    background: #ffffff;
+    font-size: 20px;
+}
+.title{
+    height: 60px;
+    text-align: center;
+    background: #ffffff;
+    font-size: 40px;
+    font-weight: 800;
+    font-family: 'Indie Flower', cursive;
+}
+.tag{
+    vertical-align: top;
+    text-align: right;
+    height: 30px;
+    width: 400px;
+    background: #ffffff;
+    border-radius: 0px 0px 20px 20px;
+    font-size: 15px;
+}
+.tagsearch{
+    margin: 6px 6px;
+    height: 63px;
+    width: 300px;
+    font-size: 40px;
+    background: #F5F7FA;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    
+}
+.search{
+    position: absolute;
+    width: 400px;
+    height: 75px;
+    left: 1400px;
+    top: 50px;
+    
+    background: #5BE7C4;
+    border-radius: 50px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+}
+.mag{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 1410px;
+    top: 60px;
+    color: #ffffff;
+}
+.mag i{
+    font-size: 60px;
+}
+#nothing_search{
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 800px;
+}
+#new_post{
+    position:absolute;
+    width: 200px;
+    height: 75px;
+    left: 1150px;
+    top:55px;
+    background-color: #5BE7C4;
+    border-radius: 10px;
+    color: #ffffff;
+    border:none;
+    font-size: 24px;
+
+}

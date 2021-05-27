@@ -1,0 +1,273 @@
+
+#back{
+    position: absolute;
+    width: 42%;
+    height: 100%;
+    right: 0;
+    background: #5BE7C4;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 25px solid transparent;
+}
+
+
+#workout{
+    margin: 10px auto;
+    width: 558px;
+    height: 245px;
+
+    font-style: italic;
+    font-weight: bold;
+    font-size: 72px;
+    line-height: 84px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #F5F7FA;
+}
+
+input{
+    background:none;
+    font-size: 18px;
+    border: none; 
+    width: 100%;
+}
+input:focus{
+    outline: none; 
+}
+
+.box:hover{
+    filter: brightness(80%);
+}
+
+.box{
+    margin: 10px 15%;
+    width: 72%;
+    height: 100px;
+
+    background: #F5F7FA;
+
+    font-size: 24px;
+    line-height: 100px;
+
+    border: none;
+    border-radius: 20px;
+}
+.letID{
+    position:absolute;
+    top:51.2%;
+    left:20%;
+    font-size:24px;
+}
+.letPW{
+    position:absolute;
+    top:63.6%;
+    left:20%;
+    font-size:24px;
+}
+#skew{
+    -webkit-transform: skew(-10deg);
+    -moz-transform: skew(-10deg);
+    transform: skew(-10deg);
+    background-color:#5BE7C4;
+    width:37%;
+    left:50%;
+    margin-right: 10%;
+    text-align: center;
+    position: absolute;
+    height:100%;
+    
+    }
+.box1{
+    border: none;
+    width:80%;
+    margin-left: 85px;
+}
+.box2{
+    border: none;
+    margin-left: 95px;
+    margin-right:0px;
+}
+.pwline{
+    height:2px;
+    background-color: #F5F7FA;
+    position:absolute;
+    top:66.95%;
+    left:70.4%;
+    width:22%
+}
+.pwline:hover{
+    filter: brightness(80%);
+}
+.pwline2{
+    height:2px;
+    background-color: #F5F7FA;
+    position:absolute;
+    top:55%;
+    left:70%;
+    width:22%
+}
+.pwline2:hover{
+    filter: brightness(80%);
+}
+#signin{
+    width: 150px;
+    height: 50px;
+    margin: 20px auto;
+    background: #F5F7FA;
+    border-radius: 15px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 24px;
+}
+
+#signin:hover{
+    filter: brightness(80%);
+}
+
+/*group*/
+
+#mytreeimage{
+    margin-left:18px;
+}
+
+#load{
+    width: 100%;
+    height: 100%;
+    font-size: 40px;
+    text-align: center;
+}
+#load_m{
+    font-size: 80px;
+    font-weight: bold;
+    line-height: 200px;
+}
+
+#local{
+    position: absolute;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 59px;
+    top:100px;
+}
+
+#header{
+    font-weight: bold;
+    font-size: 48px;
+    color: #F5F7FA;
+    display: flex;
+    align-items: center;
+    margin: 30px;
+}
+#my_group{
+    position: absolute;
+    width: 500px;
+    height: 600px;
+    right: 8%;
+    top: 240px;
+
+    background: #5BE7C4;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
+#add{
+    line-height: 140px;
+}
+
+#tree_popup{
+    position: relative;
+    width: 1500px;
+    height: 900px;
+    margin:auto;
+
+    background: #000000;
+}
+.center_letter{
+    margin:0 auto;
+}
+
+/*groupcard*/
+.Section{
+    color: black;
+    width: 472px;
+    height: 140px;
+    margin: 20px auto;
+
+    background: #F5F7FA;
+    border-radius: 20px;
+    display: flex;
+    vertical-align: middle;
+    
+    font-size: 18px;
+}
+.Section:hover{
+    filter:brightness(80%);
+}
+
+.group_tree{
+    width: 100px;
+    height: 100px;
+
+    background: #FFFFFF;
+    border: 3px solid #5BE7C4;
+    box-sizing: border-box;
+    border-radius: 500px;
+    margin: 20px;
+}
+
+.group_info{
+    width: 296px;
+    height: 89px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    font-style: normal;
+}
+.name_1{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/*map*/
+#map{
+    margin: auto 150px;
+    display: flex;
+    width: 1000px;
+    height: 1000px;
+    border: 1px solid olive;
+}
+svg{
+    position: absolute;
+    width: 800px;
+    height: 1000px;
+    top: 50%;
+    left: 50%;
+    margin: -400px 0 0 -500px;
+    border: 1px solid olive;
+    
+}
+.OUTLINE {
+    stroke-linejoin:round;
+    stroke: #ffffff;
+    stroke-width: 2;
+    fill :#F5F7FA;
+}
+.OUTLINE:hover{
+    filter: brightness(80%);
+}
+.LINE {
+    stroke-linejoin:round;
+    stroke: #ffffff;
+    stroke-width: 1;
+    fill: none;
+}
+.POINT {
+    stroke: #ffffff;
+    stroke-width: 1;
+    fill: #ffffff;
+}

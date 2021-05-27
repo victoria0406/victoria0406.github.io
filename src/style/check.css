@@ -1,0 +1,132 @@
+@font-face {
+    font-family: "Roboto";  
+    src: url("../font/Roboto-Regular.ttf") format("truetype");
+    font-weight: 200;
+  }
+  
+
+.bg{
+    background-color: white;
+    border: 2px solid #50C1E9;
+    border-radius: 5px;
+    position:absolute;
+    top: 290px;
+    left:345px;
+    width:890px;
+    height:420px
+}
+
+.sending-group-name{
+    font-family: "Roboto";
+    position:absolute;
+    font-size:20px;
+    color:black;
+    top:320px;
+    left:590px;
+}
+
+.sending-group{
+    font-family: "Roboto";
+    position:absolute;
+    font-size:20px;
+    color:black;
+    top:320px;
+    left:420px;
+}
+
+.receiving-group-name{
+    font-family: "Roboto";
+    position:absolute;
+    font-size:20px;
+    color:black;
+    top:370px;
+    left:590px;
+}
+
+.receiving-group{
+    font-family: "Roboto";
+    position:absolute;
+    font-size:20px;
+    color:black;
+    top:370px;
+    left:405px;
+}
+
+.Betting-mileage{
+    font-family: "Roboto";
+    position:absolute;
+    font-size:20px;
+    color:black;
+    top:420px;
+    left:410px;
+}
+
+.betmileage{
+    position:absolute;
+    font-size:20px;
+    top:420px;
+    left:590px;
+    font-weight: bold;
+    color:#50C1E9;
+}
+
+.Contents{
+    font-family: "Roboto";
+    position:absolute;
+    font-size:20px;
+    color:black;
+    top:470px;
+    left:467px;
+}
+
+.Box{
+    background-color: #F5F3F3;
+    position:absolute;
+    top:470px;
+    left:590px;
+    color:black;
+    font-size: 18px;
+    line-height: 50px;
+    font-family: "Roboto";
+    width:580px;
+    height:120px;
+    border-radius: 5px;
+}
+
+.no{
+    font-family:"Roboto";
+    position:absolute;
+    font-size:14px;
+    top:655px;
+    left:630px;
+    width:120px;
+    height: 30px;
+    background-color: white;
+    border-radius: 3px;
+    border: 0px solid transparent;
+    box-shadow: 1px 1px 3px #BCBEC0;
+}
+
+.yes{
+    font-family:"Roboto";
+    position:absolute;
+    font-size:14px;
+    top:655px;
+    left:800px;
+    width:120px;
+    height: 30px;
+    background-color: white;
+    border-radius: 3px;
+    border: 2px solid #50C1E9;
+    box-shadow: 1px 1px 3px #BCBEC0;
+}
+
+.message{
+    font-family: "Roboto";
+    position:absolute;
+    font-size:20px;
+    color:black;
+    top:610px;
+    left:480px;
+    letter-spacing: 2px;
+}
