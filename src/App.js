@@ -14,6 +14,7 @@ import OpenDiary from './components/openDiary';
 
 import {
   BrowserRouter as Router,
+  HashRouter,
   Route,
 } from "react-router-dom";
 
@@ -22,7 +23,6 @@ import {
 function App() {
   return (
     <Router>
-      <switch>
         <Route path="/challenge-send" exact component={challengesend}/>
         <Route path="/management" exact component={management}/>
         <Route path="/challenge" exact component={challenge}/>
@@ -35,7 +35,6 @@ function App() {
         <Route path='/diary/:id' component={DiaryPage} /> 
         <Route path='/component' component={ComponentPage} />
         <Route path='/openDiary/:id' component={OpenDiary}/>
-      </switch>
     </Router>
   );
 }
