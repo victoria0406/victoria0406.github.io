@@ -21,7 +21,7 @@ import {
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <switch>
         <Route path="/challenge-send" exact component={challengesend}/>
         <Route path="/management" exact component={management}/>
