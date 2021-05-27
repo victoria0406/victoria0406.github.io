@@ -55,7 +55,7 @@ function Menubar(props){
         return(
             <div>
                 <div id= "fake_bar" onClick={()=>menuon()}><img src={menu_img} style={{position:"fixed", top:"49%",height:"40px"}}/></div>
-                <div id = "bar">
+                <div id = "bar" style={{opacity: "90%",position:"fixed",top:"0px",left:"-200px", height: "100%", width: "200px",  background: "#5BE7C4", display: "block"}}>
                     <div id="menubar">Menu<img src = {x_img} onClick={()=>menuout()} style={{position:'absolute', right:"20px", top:"20px", height:"20px"}}/></div>
                     
                     <div className="list_m">MAIN
