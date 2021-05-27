@@ -42,6 +42,16 @@ function Menubar(props){
         var mygroup=props.group;
         var user=props.user;
         console.log([mygroup,user]);
+
+        function menuon(){
+            console.log("menuon");
+            document.getElementById('bar').style.left='0px';
+            document.getElementById('fake_bar').style.left='-2%';
+        }
+        function menuout(){
+            document.getElementById('bar').style.left= '-200px';
+            document.getElementById('fake_bar').style.left='0px';
+        }
         return(
             <div>
                 <div id= "fake_bar" onClick={()=>menuon()}><img src={menu_img} style={{position:"fixed", top:"49%",height:"40px"}}/></div>
@@ -76,15 +86,6 @@ function Menubar(props){
                 
             </div>
         )
-}
-
-function menuon(){
-    //document.getElementById('bar').style.left='0px';
-    document.getElementById('fake_bar').style.left='-2%';
-}
-function menuout(){
-    document.getElementById('bar').style.left= '-200px';
-    document.getElementById('fake_bar').style.left='0px';
 }
 
 export default Menubar;
