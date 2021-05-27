@@ -186,7 +186,7 @@ function Component(props){
               "Date": changing_date(date.toString()),
               "Title":title,
               "Tag":tags,
-              "Img": "", //어레이로 할껀데 일단 오류 방지를 위해 "" 해둔거임
+              "Img": url, //어레이로 할껀데 일단 오류 방지를 위해 "" 해둔거임
               "icon2_locate" : icon_loc_2,
               "icon2_input" : icon2_field,
               "icon1_locate" : icon1_locate,
@@ -358,7 +358,7 @@ function icon1(){
                 </div>
                 <table class = "set" >
                     <tr>
-                        <th class = "gamescore">Game score</th>
+                        <th class = "gamescore">Game score</th><td></td><td></td><td></td>
                     </tr>
                     <tr>
                         <td class = "setnum">set1</td><td><input class = "num" type = "text" id = {count_id1+1}></input></td><td width = "8px;" text-align = "center;">:</td><td><input class = "num" type = "text" id = {count_id1 + 2}></input></td>
@@ -490,7 +490,7 @@ function Uploading2(i5){
       alert("No Image Upload first");
   }
   else{
-      const url_5 = url1
+      const url_5 = url1;
       icon5_input.push(url_5);
       const comp = (
           <img src = {url1} alt = "firebase-image" class = "image2"/>

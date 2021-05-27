@@ -252,7 +252,7 @@
 /*이건 목적이*/
 .diary{ 
     height: 0px;
-    width: 10%;
+    width: 350px;
     display: flex;
     flex-direction: column;
 

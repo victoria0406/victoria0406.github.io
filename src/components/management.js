@@ -47,7 +47,6 @@ const MoviesPage = (props) =>{
         } 
         fetchAndSetUser();
     },[])
-    console.log(mychallenges)
     //console.log(mymileage)
 
     function numberWithCommas(x) {

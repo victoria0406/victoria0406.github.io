@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import '../style/openDiary.css';
 import ReactDOM, {render} from 'react-dom';
 import jQuery from "jquery";
@@ -12,15 +12,23 @@ var countid2 = 0;
 var countid3 = 0;
 var countid4 = 0;
 var countid5 = 0;
+var date;
+var title;
+var tag=[];
+
 
 function OpenDiary(props){
     const name= props.location.state.group;
-    const id = props.match.params.id
+    const id = props.match.params.id;
+    const [load, setLoad] = useState(false);
     console.log(name,id);
     function read(){
         db.collection("Groups").doc(name).collection("Diary").doc(id).get()
         .then(function(doc){
             if (doc.exists){
+                title = doc.data()["Title"];
+                date = doc.data()["Date"];
+                tag = doc.data()["Tag"]
                 for (var i = 0; i < doc.data().icon1_locate.length; i++){
                     icon1(doc.data().icon1_input[i], doc.data().icon1_text, doc.data().icon1_img, parseInt(doc.data().icon1_locate[i]["x"])-150, doc.data().icon1_locate[i]["y"]);
                 }
@@ -40,13 +48,27 @@ function OpenDiary(props){
             }
         })
     }
-
+    useEffect(()=>{
+        function some_info(){
+            db.collection("Groups").doc(name).collection("Diary").doc(id).get()
+            .then(function(doc){
+                if (doc.exists){
+                    title = doc.data()["Title"];
+                    date = doc.data()["Date"];
+                    tag = doc.data()["Tag"];
+                }
+                setLoad(true);
+            })
+        }
+        some_info();
+    },[])
+    if(!load) return (<div>loading</div>);
         return(
             <div>
                 <div class = "themediary">Diary</div>
                 <div class = "diarybone">
-                    <div class = "diarytitle" id = "diarytitle">Title</div>
-                    <div class = "writtenin">Written in</div><div class = "diarydate" id = "diarydate"> 2021.05.26 </div>
+                    <div class = "diarytitle" id = "diarytitle">{title}</div>
+                    <div class = "writtenin">Written in</div><div class = "diarydate" id = "diarydate"> {date.year}.{date.month}.{date.day} </div>
                     <div class = "boneline"></div>
                     <button class = "load" onClick = {()=>read()}>load</button>
                     <div class = "getcomponents">

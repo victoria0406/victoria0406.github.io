@@ -142,7 +142,7 @@ function Mileage(props){
         // //console.log(mileage1)
         // setRanks(mileage1[0])
         // //console.log(ranks)
-    })
+    },[])
     //console.log(ranks)
     //console.log(mileages)
     //console.log(mymileages)

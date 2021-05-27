@@ -367,7 +367,7 @@ function Main(props){
                 if(diary.length==0){   
                     querySnapshot.forEach((doc,i) => {
                         var data = doc.data();
-                        diary.push({date:data["Date"], title:data["Title"], tag:data["Tag"], img:imgTest, id:doc.id}); //여긴 테스트용 사진 넣어둠
+                        diary.push({date:data["Date"], title:data["Title"], tag:data["Tag"], img:data["Img"], id:doc.id}); //여긴 테스트용 사진 넣어둠
                         //date바꾸는 법만 알면 끝0
                     })
                 }
@@ -477,7 +477,7 @@ function Main(props){
                                 <thead>
                                 <tr>
                                 <td height = "180px">
-                                    <img src={ imgTest} class = "diary_img" style={{maxHeight:"175px"}}/>
+                                    <img src={d.img} alt="NO_Image"class = "diary_img" style={{maxHeight:"175px", maxWidth:"350px"}}/>
                                 </td>
                                 </tr>
                                 </thead>
