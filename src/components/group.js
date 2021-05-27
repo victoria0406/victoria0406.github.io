@@ -52,6 +52,7 @@ function Group(props){
 
     const [load,setLoad]=useState(false);
     if(uid==null)  {console.log(load); uid  = props.match.params.id;}
+    if(uid==null) {uid  = props.location.state.user;}
     useEffect(() => {
         function get_info(uid){
             var ref;
