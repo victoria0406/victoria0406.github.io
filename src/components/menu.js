@@ -69,7 +69,7 @@ function Menubar(props){
                     </div>
                     <div className="list_m">LOGOUT
                     <div className="drop_down">
-                        <Link to={{pathname :"/login", state : {group: mygroup, user:user}}}><div className="list_sub">Logout</div></Link>
+                        <Link to={{pathname :"/", state : {group: mygroup, user:user}}}><div className="list_sub">Logout</div></Link>
                         <Link to={{pathname :"/group/"+uid, state : {group: mygroup, user:user}}}><div className="list_sub">Change Group</div></Link>
                         </div>
                     </div>

@@ -29,7 +29,7 @@ function App() {
         <Route path="/mileage" exact component={mileage}/>
         <Route path="/win" exact component={win}/>
         <Route path="/check" exact component={check}/>
-        <Route path="/login" exact component ={Login}/>
+        <Route path="/" exact component ={Login}/>
         <Route path="/group/:id" exact component = {Group}/>
         <Route path='/main' component={MainPage} />
         <Route path='/diary/:id' component={DiaryPage} /> 
