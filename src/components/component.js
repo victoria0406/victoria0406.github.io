@@ -15,8 +15,6 @@ import battle_img from '../battle.png';
 import img_img from '../img.png';
 
 
-
-
 window.$ = window.jQuery = jQuery;  
 
 
@@ -36,6 +34,7 @@ var i3_1 = 801;
 var i3_2 = 10301;
 var i5 = 10501;
 var i4 = 901;
+
 
 var icon2_input = [];
 var icon2_locate = [];
@@ -59,6 +58,8 @@ var icon5_locate = [];
 var icon5_field = [];
 
 var icon1_img = "";
+
+
 
 function textareaToVar(){
     console.log(icon2_input)
@@ -95,13 +96,10 @@ function textareaToVar(){
       console.log(valueInVar_3_2);
       icon3_field.push({first : valueInVar_3_1, second : valueInVar_3_2})
     }
-
+    
     for(var i = 0; i < icon5_input.length; i++){
       icon5_field.push(icon5_input[i][1]);
   }
-    
-
-    
     
 }
 
@@ -112,13 +110,11 @@ function Component(props){
   console.log(history);
   const name= props.location.state.group;
 
-
-  db.collection("Groups")
-
   const [date, setDate] = useState(new Date());
   const [title, setTitle] = useState(""); //ok
   const [tag,setTag]=useState(""); //ok
   const [img, setImg] = useState([]); // 여기 통해서 이미지 정보들 넘겨줘요오오
+
   const [image, setImage] = useState(null)
   const [url, setUrl] = useState("");
   
@@ -328,6 +324,8 @@ function Component(props){
     
 }
 
+
+
 //----------------------------------------------img upload-------------------------------------------------
 
 function Uploading(){
@@ -341,6 +339,7 @@ function Uploading(){
             <img src = {url1} alt = "firebase-image" class = "image1"/>
             );
         ReactDOM.render(comp, document.getElementById('putimg'));
+
     }
 
 }
@@ -358,7 +357,7 @@ function icon1(){
                 </div>
                 <table class = "set" >
                     <tr>
-                        <th class = "gamescore">Game score</th><td></td><td></td><td></td>
+                        <th class = "gamescore">Game score</th>
                     </tr>
                     <tr>
                         <td class = "setnum">set1</td><td><input class = "num" type = "text" id = {count_id1+1}></input></td><td width = "8px;" text-align = "center;">:</td><td><input class = "num" type = "text" id = {count_id1 + 2}></input></td>
@@ -390,46 +389,47 @@ function icon1(){
 }
 
 function delete1(){
-  const comp = (
-      <div></div>
-  )
-  ReactDOM.render(comp, document.getElementById('component1'));
-  icon1_input = [];
-  icon1_locate = [];
+    const comp = (
+        <div></div>
+    )
+    ReactDOM.render(comp, document.getElementById('component1'));
+    icon1_input = [];
+    icon1_locate = [];
 }
 
 //---------------------------------------------------icon2----------------------------------------------------------//
 
 function delete2(thisid,count_id2){
-  console.log(thisid);
-  console.log(count_id2)
-  ReactDOM.render(<div></div>, document.getElementById(thisid));
-  for(let i = 0; i < icon2_input.length; i++) {
-    if(icon2_input[i] === count_id2 + 500)  {
-      console.log("in here")
-      icon2_input.splice(i, 1);
-      break;
+    console.log(thisid);
+    console.log(count_id2)
+    ReactDOM.render(<div></div>, document.getElementById(thisid));
+    for(let i = 0; i < icon2_input.length; i++) {
+      if(icon2_input[i] === count_id2 + 500)  {
+        console.log("in here")
+        icon2_input.splice(i, 1);
+        break;
+      }
     }
-  }
-  console.log(icon2_input);
-  
-  for(let i = 0; i < icon2_locate.length; i++) {
-    if(icon2_locate[i][0] === count_id2)  {
-      console.log("in here")
-      icon2_locate.splice(i, 1);
-      break;
+    console.log(icon2_input);
+    
+    for(let i = 0; i < icon2_locate.length; i++) {
+      if(icon2_locate[i][0] === count_id2)  {
+        console.log("in here")
+        icon2_locate.splice(i, 1);
+        break;
+      }
     }
-  }
-  console.log(icon2_locate);
+    console.log(icon2_locate);
 
 }
 function icon2(){
     icon2_locate.push([count_id2,[0,0]])
     const thisid = count_id;
+    const count2 = count_id2;
     const comp = (    
         <div>
             <div class = "draggable2" id = {count_id2} >D R A G</div>
-            <div class = "delete2"  onClick = {() => delete2(thisid)}>X</div>
+            <div class = "delete2"  onClick = {() => delete2(thisid,count2)}>X</div>
             <textarea class = "textboxes" onfocusout="textareaToVar()"  id = {i2}></textarea>
         </div>
     );
@@ -440,13 +440,37 @@ function icon2(){
 }
 
 //--------------------------------------------------icon3------------------------------------------------------------//
+function delete3(thisid,count_id3){
+  console.log(thisid);
+  console.log(count_id3)
+  ReactDOM.render(<div></div>, document.getElementById(thisid));
+  for(let i = 0; i < icon3_input.length; i++) {
+    if(icon3_input[i].first === count_id3 + 500)  {
+      console.log("in here")
+      icon3_input.splice(i, 1);
+      break;
+    }
+  }
+  console.log(icon3_input);
+  
+  for(let i = 0; i < icon3_locate.length; i++) {
+    if(icon3_locate[i][0] === count_id3)  {
+      console.log("in here")
+      icon3_locate.splice(i, 1);
+      break;
+    }
+  }
+  console.log(icon3_locate);
+
+}
 function icon3(){
     const thisid = count_id;
+    const count3 = count_id3;
     icon3_locate.push([count_id3,[0,0]])
     const comp = (    
         <div>
             <div class = "draggable3" id = {count_id3} >D R A G</div>
-            <div class = "delete3"  onClick = {() => delete2(thisid)}>X</div>
+            <div class = "delete3"  onClick = {() => delete3(thisid,count3)}>X</div>
             <div class = "textboxes2">
                 <div>&nbsp;&nbsp;Active skills</div>
                 <textarea class = "textboxes2-1" placeholder = "EX. Return, Drop, Smash ..." id = {i3_1}></textarea>
@@ -466,14 +490,38 @@ function icon3(){
 }
 
 //-------------------------------------------------icon4--------------------------------------------------------//
+function delete4(thisid,count_id4){
+  console.log(thisid);
+  console.log(count_id4)
+  ReactDOM.render(<div></div>, document.getElementById(thisid));
+  for(let i = 0; i < icon4_input.length; i++) {
+    if(icon4_input[i]== count_id4 + 500)  {
+      console.log("in here")
+      icon4_input.splice(i, 1);
+      break;
+    }
+  }
+  console.log(icon4_input);
+  
+  for(let i = 0; i < icon4_locate.length; i++) {
+    if(icon4_locate[i][0] === count_id4)  {
+      console.log("in here")
+      icon4_locate.splice(i, 1);
+      break;
+    }
+  }
+  console.log(icon4_locate);
+
+}
 
 function icon4(){
     icon4_locate.push([count_id4,[0,0]])
     const thisid = count_id;
+    const count4 = count_id4;
     const comp = (    
         <div>
             <div class = "draggable4" id = {count_id4} >D R A G</div>
-            <div class = "delete4"  onClick = {() => delete2(thisid)} >X</div>
+            <div class = "delete4"  onClick = {() => delete4(thisid, count4)} >X</div>
             <textarea class = "textboxes3" onfocusout="textareaToVar()"  id = {i4}></textarea>
         </div>
     );
@@ -486,17 +534,17 @@ function icon4(){
 //-------------------------------------------------icon5------------------------------------------------------//
 
 function Uploading2(i5){
-  if(!isEmpty){
-      alert("No Image Upload first");
-  }
-  else{
-      const url_5 = url1;
-      icon5_input.push(url_5);
-      const comp = (
-          <img src = {url1} alt = "firebase-image" class = "image2"/>
-          );
-      ReactDOM.render(comp, document.getElementById(i5));
-  }
+    if(!isEmpty){
+        alert("No Image Upload first");
+    }
+    else{
+        const url_5 = url1
+        icon5_input.push(url_5);
+        const comp = (
+            <img src = {url1} alt = "firebase-image" class = "image2"/>
+            );
+        ReactDOM.render(comp, document.getElementById(i5));
+    }
 
 }
 
@@ -512,7 +560,7 @@ function Uploading2(i5){
 //     }
 //   }
 //   console.log(icon5_input);
-
+  
 //   for(let i = 0; i < icon5_locate.length; i++) {
 //     if(icon5_locate[i][0] === count_id5)  {
 //       console.log("in here")
@@ -525,25 +573,26 @@ function Uploading2(i5){
 // }
 
 function icon5(){
-  const thisid = count_id;
-  icon5_locate.push([count_id5,[0,0]])
-  const id_5 = i5;
-  const count5 = count_id5;
-  const comp = (    
-      <div>
-          <div class = "imgonly"></div>
-          <div class = "draggable5" id = {count_id5} >D R A G</div>
-          <div class = "delete5"  onClick = {() => delete2(thisid)}>X</div>
-          <div id = {i5}>
-              <div class = "addimg2" onClick = {()=>Uploading2(id_5)}>+</div>
-          </div>
-      </div>
-  );
-  //icon2_input.push(i5);
-  i5++;
-  count_id5++;
-  ReactDOM.render(comp, document.getElementById(count_id++));
+    const thisid = count_id;
+    icon5_locate.push([count_id5,[0,0]])
+    const id_5 = i5;
+    const count5 = count_id5;
+    const comp = (    
+        <div>
+            <div class = "imgonly"></div>
+            <div class = "draggable5" id = {count_id5} >D R A G</div>
+            <div class = "delete5"  onClick = {() => delete2(thisid)}>X</div>
+            <div id = {i5}>
+                <div class = "addimg2" onClick = {()=>Uploading2(id_5)}>+</div>
+            </div>
+        </div>
+    );
+    //icon2_input.push(i5);
+    i5++;
+    count_id5++;
+    ReactDOM.render(comp, document.getElementById(count_id++));
 }
+
 //---------------------------------------------------drag on-----------------------------------------------------//
 //---------------------------------------------------icon1--------------------------------------------------------//
 
@@ -1073,14 +1122,13 @@ document.addEventListener('mousedown', function(event) {
       y = dragElement.style.top;
   
       console.log(getid, x, y);
-  
+
       for(var i = 0 ; i < icon5_locate.length; i++){
         if(icon5_locate[i][0] == getid){
             icon5_locate[i][1] = [x,y]
         }
       }
   
-
       document.removeEventListener('mousemove', onMouseMove);
       dragElement.removeEventListener('mouseup', onMouseUp);
     }
