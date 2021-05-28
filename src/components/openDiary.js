@@ -50,6 +50,7 @@ function OpenDiary(props){
     }
     useEffect(()=>{
         function some_info(){
+            read();
             db.collection("Groups").doc(name).collection("Diary").doc(id).get()
             .then(function(doc){
                 if (doc.exists){
@@ -62,7 +63,61 @@ function OpenDiary(props){
         }
         some_info();
     },[])
-    if(!load) return (<div>loading</div>);
+    if(!load){
+        return(
+            <div>
+                <div class = "themediary">Diary</div>
+                <div class = "diarybone">
+                    <div class = "diarytitle" id = "diarytitle">Title</div>
+                    <div class = "writtenin">Written in</div><div class = "diarydate" id = "diarydate"> Date </div>
+                    <div class = "boneline"></div>
+                    <div class = "getcomponents">
+                        <div id = "component1"></div>
+                        <div id = "10001"></div>
+                        <div id = "10002"></div>
+                        <div id = "10003"></div>
+                        <div id = "10004"></div>
+                        <div id = "10005"></div>
+                        <div id = "10006"></div>
+                        <div id = "10007"></div>
+                        <div id = "10008"></div>
+                        <div id = "10009"></div>
+                        <div id = "10010"></div>
+                        <div id = "10011"></div>
+                        <div id = "10012"></div>
+                        <div id = "10013"></div>
+                        <div id = "10014"></div>
+                        <div id = "10015"></div>
+                        <div id = "10016"></div>
+                        <div id = "10017"></div>
+                        <div id = "10018"></div>
+                        <div id = "10019"></div>
+                        <div id = "10020"></div>
+                        <div id = "10021"></div>
+                        <div id = "10022"></div>
+                        <div id = "10023"></div>
+                        <div id = "10024"></div>
+                        <div id = "10025"></div>
+                        <div id = "10026"></div>
+                        <div id = "10027"></div>
+                        <div id = "10028"></div>
+                        <div id = "10029"></div>
+                        <div id = "10030"></div>
+                        <div id = "10031"></div>
+                        <div id = "10032"></div>
+                        <div id = "10033"></div>
+                        <div id = "10034"></div>
+                        <div id = "10035"></div>
+                        <div id = "10036"></div>
+                        <div id = "10037"></div>
+                        <div id = "10038"></div>
+                        <div id = "10039"></div>
+                    </div>
+                </div>
+                <Menubar group={props.location.state.group} user={props.location.state.user}/>
+            </div>
+        )}
+
         return(
             <div>
                 <div class = "themediary">Diary</div>
@@ -70,7 +125,6 @@ function OpenDiary(props){
                     <div class = "diarytitle" id = "diarytitle">{title}</div>
                     <div class = "writtenin">Written in</div><div class = "diarydate" id = "diarydate"> {date.year}.{date.month}.{date.day} </div>
                     <div class = "boneline"></div>
-                    <button class = "load" onClick = {()=>read()}>load</button>
                     <div class = "getcomponents">
                         <div id = "component1"></div>
                         <div id = "10001"></div>
@@ -118,6 +172,7 @@ function OpenDiary(props){
             </div>
         )
     }
+    
 
 
     function icon1(icon1lst, text, url, x, y){
