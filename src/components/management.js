@@ -13,6 +13,10 @@ import _ from 'lodash';
 const MoviesPage = (props) =>{
     var mygroup=props.location.state.group;
     var user=props.location.state.user;
+    var size = 1520;
+    var zoom = window.innerWidth / size 
+
+    document.body.style.zoom = zoom;
 
 
     async function getch(){

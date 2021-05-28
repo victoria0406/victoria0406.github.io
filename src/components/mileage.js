@@ -18,6 +18,10 @@ import Menubar from './menu';
 
 
 function Mileage(props){
+    var size = 1520;
+    var zoom = window.innerWidth / size 
+
+    document.body.style.zoom = zoom;
 
     async function rank(){ 
         var mileages=[]; 

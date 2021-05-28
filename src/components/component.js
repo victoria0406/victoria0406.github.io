@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import '../style/component.css';
 import ReactDOM, {render} from 'react-dom';
 import jQuery from "jquery";
@@ -13,6 +13,14 @@ import big_img from '../big.png';
 import feedback_img from '../feedback.png';
 import battle_img from '../battle.png';
 import img_img from '../img.png';
+
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+
 
 
 window.$ = window.jQuery = jQuery;  
@@ -109,9 +117,38 @@ function Component(props){
   const history = createBrowserHistory({forceRefresh: true });;
   console.log(history);
   const name= props.location.state.group;
-  var size = 2000;
+  var size = 2010;
   var zoom = window.innerWidth / size 
   document.body.style.zoom = zoom;  
+
+  const [open, setOpen] = React.useState(false);
+
+  const [mileage, setMileage] = useState(0);
+
+  const handleClickOpen = () => {
+      setOpen(true);
+  };
+
+  const handleClose = () => {
+
+      //console.log("dkdkdkdkdk");
+      setOpen(false);
+
+  };
+  useEffect( () => {
+
+    var docRef1 = db.collection("Groups").doc(name);
+
+    docRef1.get().then((doc) => {
+      // Document was found in the cache. If no cached document exists,
+      // an error will be returned to the 'catch' block below.
+      setMileage(doc.data().mileage);
+      console.log("Cached document data:", doc.data().mileage);
+  }).catch((error) => {
+      console.log("Error getting cached document:", error);
+  });
+
+  },[]);
 
   const [date, setDate] = useState(new Date());
   const [title, setTitle] = useState(""); //ok

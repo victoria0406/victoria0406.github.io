@@ -1,7 +1,7 @@
 import React, {Component}from 'react';
 import '../style/menu.css';
 import {Link} from 'react-router-dom';
-import menu_img from '../menu.png';
+import menu_img from '../menubar.png';
 import x_img from '../letter-x.png';
 
 //링크 대충 시켜놨는데 저 밑에 줄없애주면 좋을 것 같다...
@@ -46,16 +46,16 @@ function Menubar(props){
         function menuon(){
             console.log("menuon");
             document.getElementById('bar').style.left='0px';
-            document.getElementById('fake_bar').style.left='-2%';
+            document.getElementById('fake_bar').style.left='-5%';
         }
         function menuout(){
-            document.getElementById('bar').style.left= '-200px';
+            document.getElementById('bar').style.left= '-15%';
             document.getElementById('fake_bar').style.left='0px';
         }
         return(
             <div>
-                <div id= "fake_bar" onClick={()=>menuon()}><img src={menu_img} style={{position:"fixed", top:"49%",height:"40px"}}/></div>
-                <div id = "bar" style={{opacity: "90%",position:"fixed",top:"0px",left:"-200px", height: "100%", width: "200px",  background: "#5BE7C4", display: "block"}}>
+                <div id= "fake_bar" onClick={()=>menuon()}><img src={menu_img} style={{position:"fixed", top:"2%",left:"1%",height:"60px"}}/></div>
+                <div id = "bar" style={{opacity: "90%",position:"fixed",top:"0px",left:"-15%", height: "100%", width: "15%",  background: "#5BE7C4", display: "block"}}>
                     <div id="menubar">Menu<img src = {x_img} onClick={()=>menuout()} style={{position:'absolute', right:"20px", top:"20px", height:"20px"}}/></div>
                     
                     <div className="list_m">MAIN
