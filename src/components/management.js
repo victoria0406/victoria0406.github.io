@@ -6,6 +6,8 @@ import '../style/table.css';
 import {db,firebaseApp, firebase} from "../firebase.js"
 import { useScrollTrigger } from '@material-ui/core';
 import Menubar from './menu';
+import 'bootstrap/dist/css/bootstrap.css';
+import _ from 'lodash';
 
 
 const MoviesPage = (props) =>{
@@ -150,6 +152,7 @@ const MoviesPage = (props) =>{
         }
     }
 
+    
     console.log(mychallenges)
     var gg=[];
     for (var k=0;k<mychallenges.length;k++){
@@ -162,7 +165,6 @@ const MoviesPage = (props) =>{
         gg.push(ele);   
     }
     console.log(gg);
-    const gg_1=gg;
 
     for (var l=0;l<mystate.length;l++){
         if(mystate[l]=="accepted"){
@@ -190,7 +192,7 @@ const MoviesPage = (props) =>{
     }
     
     const [movies, setMovies] = useState({
-        data: mychallenges,
+        data: getMovies(),
         pageSize: 5,
         currentPage: 1  
     });
@@ -201,8 +203,8 @@ const MoviesPage = (props) =>{
     }
     
     const{ data, pageSize, currentPage } = movies;
-    const pageMovies = paginate(data, currentPage, pageSize);
-    const {length: count } = movies.data;
+    const pageMovies = paginate(gg.reverse(), currentPage, 5);
+    const {length: count } = gg;
 
     return (
         <>
@@ -226,11 +228,11 @@ const MoviesPage = (props) =>{
                     </tr>
                 
                 <tbody>
-                    {gg.map(movie =>
+                    {pageMovies.map(movie =>
                         <tr key={movie.id} width = "600">
                             <td width = "230" text-align = 'center'className="table_group" >{movie.date}</td>
                             <td width = "300" text-align = 'center' className="table_group">{movie.withgroup}</td>
-                            <td width = "220" text-align = 'center' className="table_group">{numberWithCommas(movie.bet)}</td>
+                            <td width = "220" text-align = 'center' className="table_group">{numberWithCommas(movie.bet)} M</td>
                             <td width = "300" text-align = 'center'>                      
                                 {movie.state}
                             </td>
@@ -241,7 +243,7 @@ const MoviesPage = (props) =>{
             </table>
             <Menubar group={props.location.state.group} user={props.location.state.user}/>
             <Pagination
-                pageSize = {pageSize}
+                pageSize = {5}
                 itemsCount = {count}
                 currentPage = {currentPage}
                 onPageChange = {handlePageChange}                
