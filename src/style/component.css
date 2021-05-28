@@ -76,8 +76,8 @@
     position: fixed;
     width: 104px;
     height: 50px;
-    left: 1785px;
-    top: 940px;
+    right: 2%;
+    top: 860px;
     
     background: #5BE7C4;
     border: none;
@@ -92,8 +92,8 @@
     position: fixed;
     width: 104px;
     height: 50px;
-    left: 1785px;
-    top: 1000px;
+    right: 2%;
+    top: 920px;
     
     background: #777777;
     border: none;
@@ -107,8 +107,8 @@
 .components{
     position: fixed;
     width: 110px;
-    height: 780px;
-    left: 1780px;
+    height: 700px;
+    right: 2%;
     top: 150px;
 
     background: #FFFFFF;

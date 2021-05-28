@@ -117,9 +117,6 @@ function Component(props){
   const history = createBrowserHistory({forceRefresh: true });;
   console.log(history);
   const name= props.location.state.group;
-  var size = 2010;
-  var zoom = window.innerWidth / size 
-  document.body.style.zoom = zoom;  
 
   const [open, setOpen] = React.useState(false);
 
