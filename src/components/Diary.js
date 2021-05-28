@@ -93,13 +93,13 @@ function Diary(props){
                         //date바꾸는 법만 알면 끝
                         console.log(diary); 
                     })
-                    setLoad(true);
                 }
+                setLoad(true);
             })
         }
         loading();
         
-    },[]);
+    },[load]);
     /*if(diary.length==0){
         origin_diary.forEach((doc)=>{
             if(fil!='&') {
