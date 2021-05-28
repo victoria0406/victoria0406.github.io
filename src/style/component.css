@@ -1,3 +1,5 @@
+
+
 .bar{
     position: absolute;
     width: 75px;
@@ -9,7 +11,7 @@
 }
 .setTitle{
     position: absolute;
-    width: 715px;
+    width: 40%;
     height: 100px;
     left: 160px;
     top: 45px;
@@ -30,7 +32,7 @@
     position: absolute;
     width: 240px;
     height: 61px;
-    left: 1491.8px;
+    left: 78%;
     top: 46.68px;
 
     background: #FFFFFF;
@@ -49,7 +51,7 @@
     position: absolute;
     width: 144px;
     height: 58px;
-    left: 1754px;
+    left: 91%;
     top: 46px;
     font-family: Roboto;
     font-style: normal;
@@ -261,7 +263,7 @@
 .upload{
     position: absolute;
     top: -260px;
-    left: 250px;
+    left: 10%;
 }
 
 .file{
@@ -521,13 +523,13 @@
 
 #date_choice{
     position: absolute;
-    left: 900px;
+    left: 52%;
     top: 65px;
     font-size: 28px;
 }
 #reged_tag{
     position:absolute;
-    left: 1491.8px;
+    left: 79%;
     top: 120px;
     width: 300px;
 }
