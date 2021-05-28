@@ -548,6 +548,30 @@ function Uploading2(i5){
 
 }
 
+function delete5(thisid,count_id5){
+  console.log(thisid);
+  console.log(count_id5)
+  ReactDOM.render(<div></div>, document.getElementById(thisid));
+  for(let i = 0; i < icon5_input.length; i++) {
+    if(icon5_input[i][0]== count_id5 + 10000)  {
+      console.log("in here")
+      icon5_input.splice(i, 1);
+      break;
+    }
+  }
+  console.log(icon5_input);
+  
+  for(let i = 0; i < icon5_locate.length; i++) {
+    if(icon5_locate[i][0] === count_id5)  {
+      console.log("in here")
+      icon5_locate.splice(i, 1);
+      break;
+    }
+  }
+  console.log(icon5_locate);
+
+}
+
 // function delete5(thisid,count_id5){
 //   console.log(thisid);
 //   console.log(count_id5)
