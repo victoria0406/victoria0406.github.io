@@ -22,6 +22,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { createBrowserHistory } from 'history';
+import nophoto from '../nophoto.jpg';
 
 
 var M_MAX=500000;
@@ -367,7 +368,8 @@ function Main(props){
                 if(diary.length==0){   
                     querySnapshot.forEach((doc,i) => {
                         var data = doc.data();
-                        diary.push({date:data["Date"], title:data["Title"], tag:data["Tag"], img:data["Img"], id:doc.id}); //여긴 테스트용 사진 넣어둠
+                        var image = (data["Img"]=="")?nophoto:data["Img"];
+                        diary.push({date:data["Date"], title:data["Title"], tag:data["Tag"], img:image, id:doc.id}); //여긴 테스트용 사진 넣어둠
                         //date바꾸는 법만 알면 끝0
                     })
                 }

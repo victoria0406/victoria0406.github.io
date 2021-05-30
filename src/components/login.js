@@ -94,8 +94,6 @@ const Login = () => {
         </div>
         <img src={man} style={{position:'absolute', left:"1%" ,maxHeight:"900px"}}/>
         <img src={woman} style={{position:'absolute', left:"10%" ,maxHeight:"920px"}}/>
-        <div className="pwline2"></div>
-        <div className="pwline"></div>
         
     </div>
 );

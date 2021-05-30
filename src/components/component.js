@@ -114,6 +114,7 @@ function textareaToVar(){
 const tags = [];
 
 function Component(props){
+
   const history = createBrowserHistory({forceRefresh: true });;
   console.log(history);
   const name= props.location.state.group;
@@ -508,7 +509,7 @@ function icon3(){
         <div>
             <div class = "draggable3" id = {count_id3} >D R A G</div>
             <div class = "delete3"  onClick = {() => delete3(thisid,count3)}>X</div>
-            <div class = "textboxes2">
+            <div class = "textboxes2" style={{position: "absolute",width: "500px",height: "500px", font: "30px", background: "#ffffff", border: "4px solid #50C1E9"}}>
                 <div>&nbsp;&nbsp;Active skills</div>
                 <textarea class = "textboxes2-1" placeholder = "EX. Return, Drop, Smash ..." id = {i3_1}></textarea>
                 <br></br><br></br><br></br><br></br>

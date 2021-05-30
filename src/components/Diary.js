@@ -8,6 +8,7 @@ import { set } from 'lodash';
 import search_icon from '../loupe.png';
 import Menubar from './menu';
 import { createBrowserHistory } from 'history';  //버전 확인 버전 저거 해야 가능한걸로 알고 있음
+import nophoto from '../nophoto.jpg';
 
 //아직 못한거 : 시간 설정, 인자 받아올 줄 몰라서 그룹마다 다르게 구현 안함 / 먹통된 파이어베이스만 잘 끌어오면 끝 / 
 /*
@@ -89,7 +90,8 @@ function Diary(props){
                         if(fil!='&') {
                             if(typeof data["Tag"].find(e=>fil.toLowerCase()==e.toLowerCase())=="undefined") return;
                         }
-                        diary.push({date:data["Date"], title:data["Title"], tag:data["Tag"], img:data["Img"], id:doc.id}); //여긴 테스트용 사진 넣어둠
+                        var image = (data["Img"]=="")?nophoto:data["Img"];
+                        diary.push({date:data["Date"], title:data["Title"], tag:data["Tag"], img:image, id:doc.id}); //여긴 테스트용 사진 넣어둠
                         //date바꾸는 법만 알면 끝
                         console.log(diary); 
                     })
