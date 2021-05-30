@@ -372,31 +372,7 @@
     background-color:#50c0e97d;
     color: #50c0e9de;
 }
-.textboxes2-1{
 
-    position: absolute;
-    width: 450px;
-    height: 180px;
-    font-size: 20px;
-    background: #ffffff;
-    border: 4px solid #50C1E9;
-    border-radius : 20px;
-    margin-left : 10px;
-}
-
-.textboxes2-2{
-
-    position: absolute;
-    width: 450px;
-    height: 200px;
-    font-size: 20px;
-    background: #ffffff;
-    border: 4px solid #50C1E9;
-    border-radius : 20px;
-    margin-top : 10px;
-    margin-left : 10px;
-
-}
 
 .draggable3{
     width: 35px;
@@ -560,12 +536,6 @@
 }
 
 .textboxes2{
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    font-size: 30px;
-    background: #ffffff;
-    border: 4px solid #50C1E9;
     border-radius : 30px;
 
 }

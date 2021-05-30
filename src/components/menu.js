@@ -65,7 +65,6 @@ function Menubar(props){
                     </div>
                     <div className="list_m"><div>DIARY</div>
                         <div className="drop_down">
-                            <Link to={{pathname :'/component', state : {group: mygroup, user:user}}}><div className="list_sub">New Posting</div></Link>
                             <Link to={{pathname :"/diary/&", state : {group: mygroup, user:user}}}><div className="list_sub">Diary</div></Link>
                         </div>
                     </div>
