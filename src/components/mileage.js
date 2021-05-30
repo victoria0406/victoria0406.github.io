@@ -13,7 +13,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import {db,firebaseApp, firebase} from "../firebase.js";
-import Menubar from './menu';
+import Menubar from './menu2';
 
 
 
