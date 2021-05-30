@@ -5,7 +5,7 @@ import {paginate} from './paginate';
 import '../style/table.css';
 import {db,firebaseApp, firebase} from "../firebase.js"
 import { useScrollTrigger } from '@material-ui/core';
-import Menubar from './menu';
+import Menubar from './menu2';
 import 'bootstrap/dist/css/bootstrap.css';
 import _ from 'lodash';
 

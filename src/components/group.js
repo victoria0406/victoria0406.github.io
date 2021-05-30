@@ -83,7 +83,7 @@ function Group(props){
         get_info(uid);
       });
       if (!load){
-          setTimeout((()=>setLoad(true)),1500);
+          setTimeout((()=>setLoad(true)),2000);
           return (
             <div id="load">
                 <div id="load_m">LOADING</div>

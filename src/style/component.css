@@ -421,7 +421,7 @@
     background-color: #50c0e93e;
     position: absolute;
     left: 507px;
-    top: 0px;
+    top: -10px;
     z-index: 10;
     font-size: 20px;
     text-align:center;
@@ -435,7 +435,7 @@
     background-color: #50c0e93e;
     position: absolute;
     left: 507px;
-    top: 50px;
+    top: 60px;
     z-index: 10;
     font-size: 30px;
     text-align:center;
