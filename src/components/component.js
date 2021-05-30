@@ -67,7 +67,7 @@ var icon5_field = [];
 
 var icon1_img = "";
 
-
+var icon1_locsave = [];
 
 function textareaToVar(){
     console.log(icon2_input)
@@ -419,8 +419,12 @@ function icon1(){
             </div>
         </div>
     );
+
+    if (icon1_locsave.length == 1){
+      icon1_locate[0] = {"x": x, "y": y};
+
     for(var i = 1; i < 12 ; i++){
-        icon1_input.push(count_id1 + i)
+        icon1_input.push(count_id1 + i);
     }
                     
     ReactDOM.render(comp, document.getElementById('component1'));
@@ -722,7 +726,8 @@ document.addEventListener('mousedown', function(event) {
     y = dragElement.style.top;
 
     console.log(getid, x, y);
-    icon1_locate[0] = {x: x, y: y}
+    icon1_locate[0] = {"x": x, "y": y};
+    icon1_locsave[0] = {"x": x, "y": y}
 
     document.removeEventListener('mousemove', onMouseMove);
     dragElement.removeEventListener('mouseup', onMouseUp);
