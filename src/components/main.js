@@ -478,8 +478,8 @@ function Main(props){
                             <table class = "diary_1">
                                 <thead>
                                 <tr>
-                                <td height = "180px">
-                                    <img src={d.img} alt="NO_Image"class = "diary_img" style={{maxHeight:"175px", maxWidth:"350px"}}/>
+                                <td height = "180px" >
+                                    <img src={d.img} alt="NO_Image"class = "diary_img" style={{maxHeight:"175px", maxWidth:"350px",margin:"5px 20px"}}/>
                                 </td>
                                 </tr>
                                 </thead>
@@ -491,7 +491,7 @@ function Main(props){
                                 </tr>
                                 <tr>
                                 <td class = "diary_date">
-                                    {d.date.year}.{d.date.month}.{d.date.day}
+                                    &nbsp;&nbsp;{d.date.year}.{d.date.month}.{d.date.day}
                                 </td>
                                 </tr>
                                 </tbody>
@@ -597,12 +597,7 @@ function Main(props){
                     <div class="calendar-left">
                         <div class="D-date">15</div>
                         <div class="D-day">SATURDAY</div>
-                        <div class="today-schedule">Today's schedule
-                        <br/>
-                        <ul>
-                            <li>Nothing</li>
-                        </ul>
-                        </div>
+
                     </div>
                 </div>
             </body>

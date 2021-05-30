@@ -159,17 +159,17 @@ function Diary(props){
                     <li class = "diary_d" id ={info.id}>
                         <table id = "table" class="diarytable_d">
                             <tr><td class = "img" onClick = {()=>{gotopost(info.id)}}><img src={info.img} alt="NO IMAGE" class = "set_img"/></td></tr>
-                            <tr><td class = "date">{info.date.year}.{info.date.month}.{info.date.day}</td></tr>
+                            <tr><td class = "date">&nbsp;{info.date.year}.{info.date.month}.{info.date.day}</td></tr>
                             <tr><td class = "title" onClick = {()=>{gotopost(info.id)}}>{info.title}</td></tr>
                             <tr><td class = "tag">
                                 {
                                     info.tag.map((t)=>{
                                         return(
-                                            <span onClick={()=>{filter(t,history)}}>#{t}        </span>
+                                            <span onClick={()=>{filter(t,history)}}>#{t}&nbsp;</span>
                                         )
                                     })
                                 }
-                                </td></tr>
+                                &nbsp;&nbsp;</td></tr>
                         </table>
                     </li>)
                     
