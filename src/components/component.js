@@ -240,7 +240,8 @@ function Component(props){
               "icon1_img" : icon1_img
               
 
-      }).then(()=>{alert("success!!"); history.push({pathname :'/Diary/&', state : {group: name, user:props.location.state.user}});})
+      }).then(()=>{
+      alert("success!!"); history.push({pathname :'/Diary/&', state : {group: name, user:props.location.state.user}});})
 
   }
 
