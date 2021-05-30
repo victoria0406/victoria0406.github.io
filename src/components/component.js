@@ -513,7 +513,7 @@ function icon3(){
                 <div>&nbsp;&nbsp;Active skills</div>
                 <textarea class = "textboxes2-1" placeholder = "EX. Return, Drop, Smash ..." id = {i3_1}></textarea>
                 <br></br><br></br><br></br><br></br>
-                <div>&nbsp;&nbsp;Points to supplement</div>
+                <div class = "word2">&nbsp;&nbsp;Points to supplement</div>
                 <textarea class = "textboxes2-2" placeholder = "EX. Practice using the return technique in the hairpin position" id = {i3_2}></textarea>
             </div>
           </div>
