@@ -13,7 +13,7 @@ const Pagination = (props) => {
 
     return(     
         <nav >{/* VSCode 입력: nav>ul.pagination>li.page-item>a.page-link*/}
-            <ul className = "pagination">
+            <ul className = "pagination" style={{color:"black"}}>
                 {pages.map(page => (
                     <li 
                         key={page} 
