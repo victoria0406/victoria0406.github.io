@@ -319,7 +319,8 @@ function Component(props){
             <button class = "Tag" onClick={regtag}>&nbsp;Tag Register</button>
             <div id="reged_tag">{tags.map((t)=><span>#{t} </span>)}</div>
             <div class = "setCal"></div>
-            
+            <div className="table_border">
+            </div>
             <table class = "components" >
                 <tr>
                     <td class = "icon" onClick = {() => icon2()}><img src = {small_img} style={{width:"100px", height:"100px"}}/></td>
@@ -337,8 +338,7 @@ function Component(props){
                     <td class = "icon" onClick = {() => icon3()}><img src = {feedback_img} style={{width:"100px", height:"100px"}}/></td>
                 </tr>
             </table>
-            <div className="table_border">
-            </div>
+            
             <div class = "Paper">
                 <div id = "component1"></div>
                 <div id = "10001"></div>
