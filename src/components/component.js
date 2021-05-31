@@ -132,6 +132,7 @@ function Component(props){
 
       //console.log("dkdkdkdkdk");
       setOpen(false);
+      history.push({pathname :'/Diary/&', state : {group: name, user:props.location.state.user}})
 
   };
   useEffect( () => {
@@ -240,9 +241,13 @@ function Component(props){
               "icon1_img" : icon1_img
               
 
-      }).then(()=>{
-      alert("success!!"); history.push({pathname :'/Diary/&', state : {group: name, user:props.location.state.user}});})
-
+      }).then(()=>{})
+       var docRef1 = db.collection("Groups").doc(name);
+       docRef1.update({
+        mileage:mileage+5000
+      });
+      handleClickOpen();
+      
   }
 
   function cancel_func(){
@@ -282,6 +287,26 @@ function Component(props){
         url1 = url;
         return(
         <body>
+          <Dialog
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="alert-dialog-title"
+            aria-describedby="alert-dialog-description"
+            >
+            <DialogTitle id="alert-dialog-title" >+5,000M</DialogTitle>
+            <DialogContent>
+            <DialogContentText id="alert-dialog-description">
+
+                Write the post! Good job!
+            </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+            <Button onClick={handleClose} color="primary" autoFocus>
+                Get Mileage!
+            </Button>
+
+            </DialogActions>
+            </Dialog>  
             <input type = "text" class = "setTitle" placeholder = " Title" value={title} onChange={(e)=>{setTitle(e.target.value)}}/>
             <div id="date_choice"><img src={calendar_img} style={{height:"50px"}}/><DatePicker selected={date} onChange={date => setDate(date)} /></div>
             
