@@ -79,8 +79,8 @@
     position: fixed;
     width: 104px;
     height: 50px;
-    right: 2%;
-    top: 860px;
+    right: 2.3%;
+    top: 875px;
     
     background: #5BE7C4;
     border: none;
@@ -95,8 +95,8 @@
     position: fixed;
     width: 104px;
     height: 50px;
-    right: 2%;
-    top: 920px;
+    right: 2.3%;
+    top: 935px;
     
     background: #777777;
     border: none;
@@ -106,6 +106,16 @@
     font-size: 20px;
     font-weight: 600;
 }
+.table_border{
+ border: 5px solid #50C1E9;
+ position: fixed;
+ width: 120px;
+ height: 700px;
+ right: 2%;
+ top: 150px;
+ border-radius: 12px;
+ box-shadow: 2px 2px 3px #BCBEC0;
+}
 
 .components{
     position: fixed;
@@ -113,12 +123,9 @@
     height: 700px;
     right: 2%;
     top: 150px;
-
     background: #FFFFFF;
     mix-blend-mode: normal;
-    border: 5px solid #50C1E9;
     box-sizing: border-box;
-    border-radius: 20px;
 }
 
 .bone{
