@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import '../style/challenge.css';
 import {db,firebaseApp, firebase} from "../firebase.js"
 import Menubar from './menu2';
+import TextField from '@material-ui/core/TextField';
+import Autocomplete from '@material-ui/lab/Autocomplete';
 
 
 function Challenge(props){
@@ -38,7 +40,7 @@ function Challenge(props){
     var mileagecomma=numberWithCommas(mileage);
     
 
-    const [Bet, setBet] = useState(0)
+    const [Bet, setBet] = useState()
     const [Rgroup, setRgroup] = useState("")
     const [Contents, setContents] = useState("")
 
@@ -69,6 +71,13 @@ function Challenge(props){
         setBet("");
         document.getElementById("bettinginput").focus();
     }
+
+    const top100Films = [
+        { title: 'BADMINTON LOVERS'},
+        { title: 'I LIKE BADMINTON'},
+        { title: 'CHUNGNAM BADMINTON'},
+        { title: '2018 BADMINTON'},       
+      ];
     
     return(
         
@@ -93,12 +102,23 @@ function Challenge(props){
             <div className="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Challenge</div>
             <div className="circle3"></div>
             <button className="reset" onClick={(e)=>reset_btt(e)}>RESET</button>
-            <input type="text" id="bettinginput" value = {Bet} onChange={onBetHandler}/>
+            <input type="text" id="bettinginput" value = {Bet} onChange={onBetHandler} placeholder = "0"/>
             <div className="receiving">Receiving Group</div>
-            <input type="text" id="bettinginput2" value = {Rgroup} onChange={onRgroupHandler}/>
+            <Autocomplete className="bettinginput2"
+                id="combo-box-demo"
+                options={top100Films}
+                getOptionLabel={(option) => option.title}
+                onChange={(_, newValue) => setRgroup(newValue)}
+
+                style={{ width: 375}}
+                value = {Rgroup}
+                // onChange={onRgroupHandler}
+                renderInput={(params) => <TextField {...params} label="Choose group" variant="outlined" />}
+            />
+            {/* <input type="text" id="bettinginput2" value = {Rgroup} onChange={onRgroupHandler}/> */}
             <div className="contents_challenge">Contents</div>
             <textarea type="text" id="bettinginput3" value = {Contents} onChange={onContentsHandler}></textarea>
-            <Link to={{pathname :'./check', state : {rgroup:Rgroup, group: groupname,bet: Bet, contents : Contents, mileage : mileage, user:props.location.state.user}}}><button className="send" onClick = {sendClick}>SEND</button> </Link>
+            <Link to={{pathname :'./check', state : {rgroup:Rgroup.title, group: groupname,bet: Bet, contents : Contents, mileage : mileage, user:props.location.state.user}}}><button className="send" onClick = {sendClick}>SEND</button> </Link>
             <Menubar group={props.location.state.group} user={props.location.state.user}/>
             </header>     
         </div>
