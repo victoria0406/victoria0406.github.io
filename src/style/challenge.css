@@ -202,20 +202,21 @@
     color: black;
     font-family: "Roboto";
     font-size: 20px;
-    top: 435px;
+    top: 440px;
     left: 840px;
 }
 
-#bettinginput2{
-  font-size: 17px;
+.bettinginput2{
+  /* font-size: 17px; */
   width: 375px;
-  height:35px;
+  height:57px;
   position:absolute;
   top:430px;
   left:1025px;
+  color:#50C1E9;
   border: 1px solid #50C1E9;
   box-shadow: 0.5px 0.5px 2px #BCBEC0;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 .contents_challenge{
   position: absolute;
