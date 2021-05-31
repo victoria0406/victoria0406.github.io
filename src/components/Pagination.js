@@ -1,5 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
+import '../style/pagination.css';
 
 const Pagination = (props) => {
     const {itemsCount, pageSize,currentPage, onPageChange } = props;
@@ -18,7 +19,7 @@ const Pagination = (props) => {
                     <li 
                         key={page} 
                         className = {page === currentPage ? "page-item active" : "page-item"}
-                        stlye = {{cursor: "pointer"}}>
+                        stlye = {{cursor: "pointer", color: "black"}}>
                             <a className="page-link" onClick={() => onPageChange(page)}>{page}</a>{/*페이지 번호 클릭 이벤트 처리기 지정*/}
                     </li>
                 ))}

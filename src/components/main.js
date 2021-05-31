@@ -444,7 +444,7 @@ function Main(props){
                     </thead>
                     <tbody>
                     <tr><td class = "mileage_jun">
-                        {numberWithCommas(mileage)}
+                        {numberWithCommas(mileage)} M
                     </td></tr>
                     <tr><td class = "tree">
                         <img src={choosetree(mileage)} class = "tree_img"/>
@@ -491,7 +491,7 @@ function Main(props){
                                 </tr>
                                 <tr>
                                 <td class = "diary_date">
-                                    &nbsp;&nbsp;{d.date.year}.{d.date.month}.{d.date.day}
+                                    &nbsp;&nbsp;{d.date.year}.{d.date.month}.{d.date.day}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 </td>
                                 </tr>
                                 </tbody>
