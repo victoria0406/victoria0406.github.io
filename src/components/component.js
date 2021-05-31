@@ -125,14 +125,15 @@ function Component(props){
   const [mileage, setMileage] = useState(0);
 
   const handleClickOpen = () => {
-      setOpen(true);
+      //setOpen(true);
+      document.getElementById("get_mileage").style.display='block';
   };
 
   const handleClose = () => {
 
       //console.log("dkdkdkdkdk");
       setOpen(false);
-      history.push({pathname :'/Diary/&', state : {group: name, user:props.location.state.user}})
+      confirm_func();
 
   };
   useEffect( () => {
@@ -166,9 +167,13 @@ function Component(props){
   }
 
   function regtag(){
-    tags.push(tag);
+    tags.push(tag.replace(' ',''));
     setTag("");
-    console.log(tags);
+}
+function tag_remove(){
+  tags.pop();
+  setTag("");
+  return;
 }
 
   function changing_date(d){
@@ -241,12 +246,13 @@ function Component(props){
               "icon1_img" : icon1_img
               
 
-      }).then(()=>{})
-       var docRef1 = db.collection("Groups").doc(name);
+      }).then(()=>{
+        var docRef1 = db.collection("Groups").doc(name);
        docRef1.update({
         mileage:mileage+5000
+      })
+       history.push({pathname :'/Diary/&', state : {group: name, user:props.location.state.user}})
       });
-      handleClickOpen();
       
   }
 
@@ -287,26 +293,6 @@ function Component(props){
         url1 = url;
         return(
         <body>
-          <Dialog
-            open={open}
-            onClose={handleClose}
-            aria-labelledby="alert-dialog-title"
-            aria-describedby="alert-dialog-description"
-            >
-            <DialogTitle id="alert-dialog-title" >+5,000M</DialogTitle>
-            <DialogContent>
-            <DialogContentText id="alert-dialog-description">
-
-                Write the post! Good job!
-            </DialogContentText>
-            </DialogContent>
-            <DialogActions>
-            <Button onClick={handleClose} color="primary" autoFocus>
-                Get Mileage!
-            </Button>
-
-            </DialogActions>
-            </Dialog>  
             <input type = "text" class = "setTitle" placeholder = " Title" value={title} onChange={(e)=>{setTitle(e.target.value)}}/>
             <div id="date_choice"><img src={calendar_img} style={{height:"50px"}}/><DatePicker selected={date} onChange={date => setDate(date)} /></div>
             
@@ -315,13 +301,10 @@ function Component(props){
                 <progress value = {progress} max = "100" class = "progress"/>
                 <button type="button" class = "upbutton" onClick={handleUpload}>Upload</button>
             </div>
-            <input type = "text" class = "setTag" value={tag} onChange={(e)=>{setTag(e.target.value)}}   onKeyPress={e=>{if(e.key=='Enter') regtag()}}/>
-            <button class = "Tag" onClick={regtag}>&nbsp;Tag Register</button>
-            <div id="reged_tag">{tags.map((t)=><span>#{t} </span>)}</div>
             <div class = "setCal"></div>
             <div className="table_border">
             </div>
-            <table class = "components" >
+            <table class = "components">
                 <tr>
                     <td class = "icon" onClick = {() => icon2()}><img src = {small_img} style={{width:"100px", height:"100px"}}/></td>
                 </tr>
@@ -338,7 +321,6 @@ function Component(props){
                     <td class = "icon" onClick = {() => icon3()}><img src = {feedback_img} style={{width:"100px", height:"100px"}}/></td>
                 </tr>
             </table>
-            
             <div class = "Paper">
                 <div id = "component1"></div>
                 <div id = "10001"></div>
@@ -384,14 +366,22 @@ function Component(props){
             </div>
             
             
-            <button class = "confirm" onClick = {confirm_func}>Confirm</button>
+            <button class = "confirm" onClick = {handleClickOpen}>Confirm</button>
             <button class = "cancel" onClick = {cancel_func}>Cancel</button>
             <Menubar group={props.location.state.group} user={props.location.state.user}/>
+            <div id ="get_mileage">
+              <div id="pop_title">+5000M</div>
+              <div id= "pop_title">Write the post! Good job!</div>
+              <h4 style={{margin:"20px 50px 10px 50px"}}>tags</h4>
+              <div id="reged_tag">{tags.map((t)=><span><span class="Tag_i">#{t} </span>&nbsp;</span>)}<input style={{width:"100px"}} value={tag} onChange={(e)=>{setTag(e.target.value)}}   onKeyDown={e=>{if(e.key==' '||e.key=='Enter') regtag(); else if(e.key=='Backspace'&&(tag==''||tag==' '))tag_remove();}}/></div>
+              <Button id="mileget" onClick={handleClose} autoFocus style={{margin:"10px 130px"}}>
+                Get Mileage!
+            </Button>
+            </div>
         </body>
     )
     
 }
-
 
 
 //----------------------------------------------img upload-------------------------------------------------
