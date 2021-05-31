@@ -15,6 +15,7 @@ import _ from 'lodash';
 
 var uid;
 var group_info=[];
+var my_groups=[];
 var M_MAX = 500000;
 /*function get_info(uid){
     var ref;
@@ -56,7 +57,6 @@ function Group(props){
     useEffect(() => {
         function get_info(uid){
             var ref;
-            var my_groups=[];
             ref = db.collection('users').doc(uid);
             ref.get().then(doc=>{
                 my_groups= doc.data()["group"];
@@ -93,10 +93,10 @@ function Group(props){
       }
       
       
-      else{ console.log("loaded");
+      else{ console.log(my_groups);
         return (
         <div id="all">
-            <Mapping/>
+            <Mapping mygroups={my_groups}/>
             <div id = "my_group">
                 <div id="header">My Group</div>
                 {

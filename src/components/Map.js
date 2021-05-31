@@ -49,7 +49,7 @@ var group_info=[
     position:
     {lat: 37.53448,
     lng: 127.169411},
-    my:true,
+    my:false,
     mileage :0
   },
   {
@@ -85,6 +85,15 @@ var group_info=[
     position:
     {lat: 37.601069,
     lng: 127.080402},
+    my:false,
+    mileage :0
+  },
+  {
+    name:"BADMINTON LOVERS",
+    exercise:'badminton',
+    position:
+    {lat: 37.501069,
+    lng: 127.180402},
     my:false,
     mileage :0
   }
@@ -145,6 +154,14 @@ class Mapping extends React.Component {
   }
  
   render() {
+    for(const gr of group_info){
+      console.log(this.props.mygroups);
+      for(const mg of this.props.mygroups){
+        if(gr.name==mg) gr.my =true;
+        console.log("1");
+      }
+    }
+    console.log("2");
     return (
       <Map 
           google={this.props.google}
