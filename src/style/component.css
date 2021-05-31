@@ -109,10 +109,10 @@
 .table_border{
  border: 5px solid #50C1E9;
  position: fixed;
- width: 120px;
- height: 700px;
- right: 2%;
- top: 150px;
+ width: 130px;
+ height: 718px;
+ right: 1.7%;
+ top: 142px;
  border-radius: 12px;
  box-shadow: 2px 2px 3px #BCBEC0;
 }
