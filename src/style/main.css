@@ -10,7 +10,8 @@
     max-height : 25px;
 }
 .empty{
-    font-size : 20px;
+    display: inline;
+    font-size : 25px;
     color : gray;
     text-align: center;
     font-weight: normal;
