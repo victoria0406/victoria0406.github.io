@@ -124,6 +124,26 @@ function Component(props){
 
   const [mileage, setMileage] = useState(0);
 
+  const doc_name = (d)=>{
+    var s_date = d.split(" ");
+    var month;
+    if (s_date[1]=='Jab') month="01";
+    else if(s_date[1]=='Feb') month="02";
+    else if(s_date[1]=='Mar') month="03";
+    else if(s_date[1]=='Apr') month="04";
+    else if(s_date[1]=='May') month="05";
+    else if(s_date[1]=='Jun') month="06";
+    else if(s_date[1]=='Jul') month="07";
+    else if(s_date[1]=='Aug') month="08";
+    else if(s_date[1]=='Sep') month="09";
+    else if(s_date[1]=='Oct') month="10";
+    else if(s_date[1]=='Nov') month="11";
+    else  month="12";
+    
+    return s_date[3]+month+s_date[2]+s_date[4].replace(/:/g,"_");
+
+  }
+
   const handleClickOpen = () => {
       //setOpen(true);
       document.getElementById("get_mileage").style.display='block';
@@ -218,13 +238,12 @@ function tag_remove(){
         console.log(icon5_locate[i]);
         icon_loc_5.push({x:icon5_locate[i][1][0] , y:icon5_locate[i][1][1]})
       }
-
-      console.log(icon_loc_4);
-      console.log(icon4_input.length);
-      console.log(icon4_field);
       const ref = db.collection("Groups").doc(name).collection("Diary");
-      ref.add({
-              "Date": changing_date(date.toString()),
+      var date_info =  changing_date(date.toString());
+      var doc_n = doc_name(date.toString());
+      console.log(doc_n);
+      ref.doc(doc_n).set({
+              "Date":date_info,
               "Title":title,
               "Tag":tags,
               "Img": url, //어레이로 할껀데 일단 오류 방지를 위해 "" 해둔거임

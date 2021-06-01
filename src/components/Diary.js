@@ -93,9 +93,9 @@ function Diary(props){
                         var image = (data["Img"]=="")?nophoto:data["Img"];
                         diary.push({date:data["Date"], title:data["Title"], tag:data["Tag"], img:image, id:doc.id}); //여긴 테스트용 사진 넣어둠
                         //date바꾸는 법만 알면 끝
-                        console.log(diary); 
                     })
                 }
+                diary.reverse();
                 setLoad(true);
             })
         }
@@ -153,7 +153,7 @@ function Diary(props){
                     <div onClick={()=>{filter(search,history)}} style={{margin:"10px"}}><img src= {search_icon} style={{maxHeight:"50px"}}/></div>
                 </div>
                 <ul class="mylist">
-                {
+                    {
                     diary.map((info)=>{
                     return(
                     <li class = "diary_d" id ={info.id}>
