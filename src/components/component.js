@@ -683,7 +683,7 @@ function icon4(){
         <div>
             <div class = "draggable4" id = {count_id4}><img src={grap} width= "50px" /></div>
             <div class = "delete4"  onClick = {() => delete4(thisid, count4)} >X</div>
-            <textarea class = "textboxes3" onfocusout="textareaToVar()"  id = {i4}></textarea>
+            <div class = "textboxes3"><textarea onfocusout="textareaToVar()"  id = {i4}></textarea></div>
         </div>
     );
     icon4_input.push(i4);
