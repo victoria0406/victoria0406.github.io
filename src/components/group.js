@@ -4,12 +4,12 @@ import Mapping from './Map';
 import {db, firebaseApp, firebase} from '../firebase';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import tree1  from '../tree1.png'
-import tree2  from '../tree2.png'
-import tree3  from '../tree3.png'
-import tree4  from '../tree4.png'
-import tree5  from '../tree5.png'
-import tree6  from '../tree6.png'
+import tree1  from '../group_tree1.png'
+import tree2  from '../group_tree2.png'
+import tree3  from '../group_tree3.png'
+import tree4  from '../group_tree4.png'
+import tree5  from '../group_tree5.png'
+import tree6  from '../group_tree6.png'
 import loading from '../loading.PNG'
 import _ from 'lodash';
 
@@ -138,7 +138,7 @@ class Groupcard extends React.Component{
         return(
             <Link to= {{pathname:'/main',state:{group:name, user:uid}}}>
             <div className = "Section">
-                <div className = "group_tree"><img id="mytreeimage" src= {tree}/></div>
+                <div className = "group_tree"><img id="mytreeimage" src= {tree} height="100px"/></div>
                 <div className = "group_info">
                     <div className = "name_1">{name}</div>
                     <div className = "exercise">Exercise : {exersize}</div>
