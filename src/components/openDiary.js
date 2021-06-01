@@ -66,7 +66,6 @@ function OpenDiary(props){
     if(!load){
         return(
             <div>
-                <div class = "themediary">Diary</div>
                 <div class = "diarybone">
                     <div class = "diarytitle" id = "diarytitle">Title</div>
                     <div class = "writtenin">Written in</div><div class = "diarydate" id = "diarydate"> Date </div>
@@ -120,7 +119,6 @@ function OpenDiary(props){
 
         return(
             <div>
-                <div class = "themediary">Diary</div>
                 <div class = "diarybone">
                     <div class = "diarytitle" id = "diarytitle">{title}</div>
                     <div class = "writtenin">Written in</div><div class = "diarydate" id = "diarydate"> {date.year}.{date.month}.{date.day} </div>
