@@ -78,7 +78,7 @@
     width: 104px;
     height: 50px;
     right: 2.3%;
-    top: 938px;
+    top: 860px;
     cursor:pointer;
     background: #5BE7C4;
     border: none;
@@ -108,7 +108,7 @@
  border: 5px solid #50C1E9;
  position: fixed;
  width: 127px;
- height: 718px;
+ height: 633px;
  right: 1.6%;
  top: 200px;
  border-radius: 12px;
@@ -118,9 +118,9 @@
 .components{
     position: fixed;
     width: 110px;
-    height: 700px;
+    height: 620px;
     right: 2%;
-    top: 208px;
+    top: 206px;
     background: #FFFFFF;
     mix-blend-mode: normal;
     box-sizing: border-box;
