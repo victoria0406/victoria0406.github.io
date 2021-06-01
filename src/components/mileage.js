@@ -79,12 +79,10 @@ function Mileage(props){
             //return rankedgroup;
             
         });
-        
-        var real_my_goals=my_goals.reverse()
         //console.log(order)
               
     
-        return [rankedgroup,rank,gm,order,real_my_goals];
+        return [rankedgroup,rank,gm,order,my_goals];
     }
 
     var size = 1474;
@@ -138,7 +136,7 @@ function Mileage(props){
             await setN(mm[0]);
             await setRanks(data[0]);
             await setMileages(comma);
-            await setGoals(data[4]);
+            await setGoals(data[4].reverse());
             //console.log(ranks)
            }
         fetchAndSetUser();
@@ -220,7 +218,7 @@ function Mileage(props){
         goals[l].state=rstate
         
         console.log(goals);
-        const store=goals;
+        const store=goals.reverse();
         //console.log(store);
         docRef.update({
             goal: firebase.firestore.FieldValue.delete()
