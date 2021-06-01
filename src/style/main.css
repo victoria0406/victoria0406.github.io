@@ -362,6 +362,7 @@
 
 .month-color {
     color: #5BE7C4;
+    font-size: 28px;
 }
 .month-hover:hover{
     color:#5BE7C4 !important;
@@ -370,19 +371,19 @@
 
 .months {
     color: #AAAAAA;
-    position: relative;
-    left: 265px;
-    top: 85px;
+    position: absolute;
+    left: 255px;
+    top: 70px;
     word-spacing: 20px;
     font-weight:900;
 }
 
 .month-line {
     border-color: #E8E8E8;
-    position: relative;
-    top: 70px;
-    width: 700px;
-    left: 100px;
+    position: absolute;
+    top: 95px;
+    width: 680px;
+    left: 235px;
 }
 
 .calendar-left {
