@@ -96,6 +96,15 @@ var group_info=[
     lng: 127.180402},
     my:false,
     mileage :0
+  },
+  {
+    name:"HI BADMINTON",
+    exercise:"badminton",
+    position:
+    {lat: 37.758357,
+    lng: 127.070501},
+    my:false,
+    mileage:0
   }
 ];
 const ref = db.collection("Groups");
