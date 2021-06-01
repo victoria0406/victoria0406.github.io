@@ -19,7 +19,9 @@ import battle_hover from '../battle_hover.png';
 import img_img from '../img.png';
 import img_hover from '../img_hover.png';
 import grap from '../drag-flick.png';
-
+import Tooltip from '@material-ui/core/Tooltip';
+import { withStyles, makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -328,7 +330,16 @@ function tag_remove(){
         function clickdata(){
           document.getElementById("calendar_img").click();
         }
-          
+
+        const HtmlTooltip = withStyles((theme) => ({
+          tooltip: {
+            backgroundColor: '#f5f5f9',
+            color: 'rgba(0, 0, 0, 0.87)',
+            maxWidth: 220,
+            fontSize: theme.typography.pxToRem(20),
+            border: '1px solid #dadde9',
+          },
+        }))(Tooltip);
 
         return(
         <body>
@@ -346,20 +357,27 @@ function tag_remove(){
             <div class = "setCal"></div>
             <div className="table_border">
             </div>
-            <table class = "components">
-                <tr>
-                    <td class = "icon" onClick = {() => icon2()}><img src = {small_img} 
+            <table class = "components">              
+                  
+                  <tr>
+                    <td class = "icon" onClick = {() => icon2()}>
+                    <HtmlTooltip
+                        title="small text" placement="left"
+                      >
+                      <img src = {small_img} 
                         onMouseEnter={(e) => {
                           e.currentTarget.src = small_hover
                         }}
-              
                         onMouseOut={(e) => {
                           e.currentTarget.src = small_img
                         }}
-                    style={{width:"100px", height:"100px"}}/></td>
-                </tr>
+                    style={{width:"100px", height:"100px"}}/></HtmlTooltip>
+                    </td>
+                </tr>  
                 <tr>
-                    <td class = "icon" onClick = {() => icon4()}>&nbsp;<img src = {big_img} 
+                  
+                    <td class = "icon" onClick = {() => icon4()}><HtmlTooltip title="big text" placement="left">
+                      <img src = {big_img} 
                         onMouseEnter={(e) => {
                           e.currentTarget.src = big_hover
                         }}
@@ -367,10 +385,11 @@ function tag_remove(){
                         onMouseOut={(e) => {
                           e.currentTarget.src = big_img
                         }}
-                        style={{width:"100px", height:"100px"}}/></td>
+                        style={{width:"100px", height:"100px", marginLeft:"5px"}}/></HtmlTooltip></td>
+                  
                 </tr>
                 <tr>
-                    <td class = "icon" onClick = {() => icon5()}>&nbsp;<img src = {img_img} 
+                    <td class = "icon" onClick = {() => icon5()}><HtmlTooltip title="photo" placement="left"><img src = {img_img} 
                       onMouseEnter={(e) => {
                         e.currentTarget.src = img_hover
                       }}
@@ -378,10 +397,10 @@ function tag_remove(){
                       onMouseOut={(e) => {
                         e.currentTarget.src = img_img
                       }}
-                    style={{width:"100px", height:"100px"}}/></td>
+                    style={{width:"100px", height:"100px", marginLeft:"5px"}}/></HtmlTooltip></td>
                 </tr>
                 <tr>
-                    <td class = "icon" onClick = {() => icon1()}> &nbsp;&nbsp;&nbsp;  <img src = {battle_img} 
+                    <td class = "icon" onClick = {() => icon1()}><HtmlTooltip title="match box" placement="left"><img src = {battle_img} 
                     onMouseEnter={(e) => {
                       e.currentTarget.src = battle_hover
                     }}
@@ -389,10 +408,10 @@ function tag_remove(){
                     onMouseOut={(e) => {
                       e.currentTarget.src = battle_img
                     }}
-                    style={{width:"80px", height:"90px"}}/></td>
+                    style={{width:"80px", height:"80px", marginTop:"5px", marginBottom:"5px" ,marginLeft:"13px"}}/></HtmlTooltip></td>
                 </tr>
                 <tr>
-                    <td class = "icon" onClick = {() => icon3()}>&nbsp;<img src = {feedback_img} 
+                    <td class = "icon" onClick = {() => icon3()}><HtmlTooltip title="skill memo" placement="left"><img src = {feedback_img} 
                     onMouseEnter={(e) => {
                       e.currentTarget.src = feedback_hover
                     }}
@@ -400,7 +419,7 @@ function tag_remove(){
                     onMouseOut={(e) => {
                       e.currentTarget.src = feedback_img
                     }}
-                    style={{width:"100px", height:"100px"}}/></td>
+                    style={{width:"100px", height:"100px", marginLeft:"5px"}}/></HtmlTooltip></td>
                 </tr>
             </table>
             <div class = "Paper">
