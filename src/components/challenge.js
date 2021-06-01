@@ -118,14 +118,15 @@ function Challenge(props){
 
             <Autocomplete
                 className="bettinginput2"
-                //id="free-solo-demo"
-                //freeSolo
+                id="free-solo-demo"
+                freeSolo
+                //disableClearable
                 onChange={(_, newValue) => setRgroup(newValue)}
                 style={{ width: 375}}
                 value = {Rgroup}
                 options={top100Films.map((option) => option.title)}
                 renderInput={(params) => (
-                <TextField {...params} label="Choose group"  />
+                <TextField {...params} label="Choose group" InputProps={{ ...params.InputProps, endAdornment : null }} />
                 )}
             />
             {/* <input type="text" id="bettinginput2" value = {Rgroup} onChange={onRgroupHandler}/> */}
