@@ -367,7 +367,6 @@ function tag_remove(){
             
             
             <button class = "confirm" onClick = {handleClickOpen}>Confirm</button>
-            <button class = "cancel" onClick = {cancel_func}>Cancel</button>
             <Menubar group={props.location.state.group} user={props.location.state.user}/>
             <div id ="get_mileage">
               <div id="pop_title">+5000M</div>
