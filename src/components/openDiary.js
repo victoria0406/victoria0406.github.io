@@ -221,12 +221,15 @@ function OpenDiary(props){
     function icon3(text1, text2, x, y){
         const comp = (    
             <div>
-                <div class = "textboxes2" style = {{left: x, top: y}}>
-                    <div>&nbsp;&nbsp;Active skills</div>
-                    <div class = "textboxes2-1" >{text1}</div>
-                    <br></br><br></br><br></br><br></br>
-                    <div>&nbsp;&nbsp;Points to supplement</div>
-                    <div class = "textboxes2-2" >{text2}</div>
+                <div class = "textboxes2" style={{position: "absolute",width: "500px",height: "500px", font: "100", background: "#ffffff", border: "4px solid #50C1E9", left:x, top:y}}>
+                <div style={{height: "225px", margin:"0px 10px"}}>
+                  <h3>&nbsp;&nbsp;Active skills</h3>
+                  <textarea class = "textboxes2-1" >{text1}</textarea>
+                </div>
+                <div style={{ margin:"5px 10px"}}>
+                  <h3>&nbsp;&nbsp;Points to supplement</h3>
+                  <textarea class = "textboxes2-2">{text2}</textarea>
+                </div>
                 </div>
             </div>
         );
