@@ -126,6 +126,20 @@
     box-sizing: border-box;
 }
 
+.small_hover{
+    height:20px;
+    font-size: 20px;
+}
+
+.hi{
+    position:fixed;
+    top:200px;
+    right:2%;
+    width:100px;
+    height: 100px;
+    background-color: #50c0e9;
+}
+
 .bone{
     z-index:-1;
     position: absolute;
@@ -297,11 +311,14 @@
     left: 1000px;
     top: 330px;
     color: gray;
-    background-color: #F5F5F5;
+    background-color: white;
     border-radius: 5px;
     font-size: 25px;
     line-height: 30px;
     border: 2px solid #EBEBEB;
+}
+#calendar_img{
+    cursor:pointer;
 }
 
 .upbutton{
