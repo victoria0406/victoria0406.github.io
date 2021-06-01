@@ -9,10 +9,15 @@ import calendar_img from "../calendar.png";
 import Menubar from './menu';
 import { createBrowserHistory } from 'history'; 
 import small_img from '../small.png';
+import small_hover from '../small_hover.png';
 import big_img from '../big.png';
+import big_hover from '../big_hover.png';
 import feedback_img from '../feedback.png';
+import feedback_hover from '../feedback_hover.png';
 import battle_img from '../battle.png';
+import battle_hover from '../battle_hover.png';
 import img_img from '../img.png';
+import img_hover from '../img_hover.png';
 import grap from '../drag-flick.png';
 
 import Button from '@material-ui/core/Button';
@@ -319,13 +324,17 @@ function tag_remove(){
           //document.getElementById("file").click();
           hiddenFileInput.current.click();
         }
+
+        function clickdata(){
+          document.getElementById("calendar_img").click();
+        }
           
 
         return(
         <body>
             <input type = "text" class = "setTitle" placeholder = " Title" value={title} onChange={(e)=>{setTitle(e.target.value)}}/>
-            <div id="date_choice"><img src={calendar_img} style={{height:"50px"}}/> &nbsp; 
-            <DatePicker selected={date} onChange={date => setDate(date)} /></div>
+            <div id="date_choice"><img src={calendar_img} onClick={(e)=>clickdata()} style={{height:"50px"}}/> &nbsp; 
+            <DatePicker id="calendar_img" selected={date} onChange={date => setDate(date)} /></div>
             <div class = "upload">
             
                 <input type="file" ref={hiddenFileInput} id="file" class = "file" onChange={handleChange} style={{display:"none"}}/>
@@ -339,19 +348,59 @@ function tag_remove(){
             </div>
             <table class = "components">
                 <tr>
-                    <td class = "icon" onClick = {() => icon2()}><img src = {small_img} style={{width:"100px", height:"100px"}}/></td>
+                    <td class = "icon" onClick = {() => icon2()}><img src = {small_img} 
+                        onMouseEnter={(e) => {
+                          e.currentTarget.src = small_hover
+                        }}
+              
+                        onMouseOut={(e) => {
+                          e.currentTarget.src = small_img
+                        }}
+                    style={{width:"100px", height:"100px"}}/></td>
                 </tr>
                 <tr>
-                    <td class = "icon" onClick = {() => icon4()}>&nbsp;<img src = {big_img} style={{width:"100px", height:"100px"}}/></td>
+                    <td class = "icon" onClick = {() => icon4()}>&nbsp;<img src = {big_img} 
+                        onMouseEnter={(e) => {
+                          e.currentTarget.src = big_hover
+                        }}
+              
+                        onMouseOut={(e) => {
+                          e.currentTarget.src = big_img
+                        }}
+                        style={{width:"100px", height:"100px"}}/></td>
                 </tr>
                 <tr>
-                    <td class = "icon" onClick = {() => icon5()}>&nbsp;<img src = {img_img} style={{width:"100px", height:"100px"}}/></td>
+                    <td class = "icon" onClick = {() => icon5()}>&nbsp;<img src = {img_img} 
+                      onMouseEnter={(e) => {
+                        e.currentTarget.src = img_hover
+                      }}
+            
+                      onMouseOut={(e) => {
+                        e.currentTarget.src = img_img
+                      }}
+                    style={{width:"100px", height:"100px"}}/></td>
                 </tr>
                 <tr>
-                    <td class = "icon" onClick = {() => icon1()}> &nbsp;&nbsp;&nbsp;  <img src = {battle_img} style={{width:"80px", height:"90px"}}/></td>
+                    <td class = "icon" onClick = {() => icon1()}> &nbsp;&nbsp;&nbsp;  <img src = {battle_img} 
+                    onMouseEnter={(e) => {
+                      e.currentTarget.src = battle_hover
+                    }}
+          
+                    onMouseOut={(e) => {
+                      e.currentTarget.src = battle_img
+                    }}
+                    style={{width:"80px", height:"90px"}}/></td>
                 </tr>
                 <tr>
-                    <td class = "icon" onClick = {() => icon3()}>&nbsp;<img src = {feedback_img} style={{width:"100px", height:"100px"}}/></td>
+                    <td class = "icon" onClick = {() => icon3()}>&nbsp;<img src = {feedback_img} 
+                    onMouseEnter={(e) => {
+                      e.currentTarget.src = feedback_hover
+                    }}
+          
+                    onMouseOut={(e) => {
+                      e.currentTarget.src = feedback_img
+                    }}
+                    style={{width:"100px", height:"100px"}}/></td>
                 </tr>
             </table>
             <div class = "Paper">
@@ -439,7 +488,7 @@ function Uploading(){
 function icon1(){
     const comp = (
         <div id = "stop">
-            <div class = "draggable" id = {count_id1}><img src={grap} width= "50px" /></div>
+            <div className = "draggable" id = {count_id1}><img src={grap} width= "50px" /></div>
             <div class = "delete1" id = "delete1" onClick = {()=>delete1()}>x</div>
             <div class = "scoresheet">
                 <div class = "putimg" id = "putimg">
