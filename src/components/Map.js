@@ -92,8 +92,8 @@ var group_info=[
     name:"BADMINTON LOVERS",
     exercise:'badminton',
     position:
-    {lat: 37.501069,
-    lng: 127.180402},
+    {lat: 37.701069,
+    lng: 126.980402},
     my:false,
     mileage :0
   },
