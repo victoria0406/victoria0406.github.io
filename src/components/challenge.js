@@ -104,7 +104,7 @@ function Challenge(props){
             <button className="reset" onClick={(e)=>reset_btt(e)}>RESET</button>
             <input type="text" id="bettinginput" value = {Bet} onChange={onBetHandler} placeholder = "0"/>
             <div className="receiving">Receiving Group</div>
-            <Autocomplete className="bettinginput2"
+            {/* <Autocomplete className="bettinginput2"
                 id="combo-box-demo"
                 options={top100Films}
                 getOptionLabel={(option) => option.title}
@@ -113,12 +113,25 @@ function Challenge(props){
                 style={{ width: 375}}
                 value = {Rgroup}
                 // onChange={onRgroupHandler}
-                renderInput={(params) => <TextField {...params} label="Choose group" variant="outlined" />}
+                renderInput={(params) => <TextField {...params} label="Choose group"  />}
+            /> */}
+
+            <Autocomplete
+                className="bettinginput2"
+                //id="free-solo-demo"
+                //freeSolo
+                onChange={(_, newValue) => setRgroup(newValue)}
+                style={{ width: 375}}
+                value = {Rgroup}
+                options={top100Films.map((option) => option.title)}
+                renderInput={(params) => (
+                <TextField {...params} label="Choose group"  />
+                )}
             />
             {/* <input type="text" id="bettinginput2" value = {Rgroup} onChange={onRgroupHandler}/> */}
             <div className="contents_challenge">Contents</div>
             <textarea type="text" id="bettinginput3" value = {Contents} onChange={onContentsHandler}></textarea>
-            <Link to={{pathname :'./check', state : {rgroup:Rgroup.title, group: groupname,bet: Bet, contents : Contents, mileage : mileage, user:props.location.state.user}}}><button className="send" onClick = {sendClick}>SEND</button> </Link>
+            <Link to={{pathname :'./check', state : {rgroup:Rgroup, group: groupname,bet: Bet, contents : Contents, mileage : mileage, user:props.location.state.user}}}><button className="send" onClick = {sendClick}>SEND</button> </Link>
             <Menubar group={props.location.state.group} user={props.location.state.user}/>
             </header>     
         </div>
