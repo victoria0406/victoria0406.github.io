@@ -211,9 +211,9 @@ body{
 
 .title_img{
     position: absolute;
-    width: 1845px;
-    height: 200px;
-    left: 75px;
+    width: 1905px;
+    height: 205px;
+    left: 10px;
     top: 0px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
     background: #C4C4C4;
