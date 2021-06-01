@@ -4,6 +4,10 @@
     src: url("../font/Staatliches-Regular.ttf") format("truetype");
   }
 
+body{
+    background-color: #F8F6F6;
+}
+
 .message_text{
     font-size: 23px;
     font-weight: bolder;
