@@ -23,9 +23,7 @@
     font-size: 60px;
 }
 
-.icon:hover{
-    background-color: #50C1E9;
-}
+
 
 
 .setTag{
@@ -558,6 +556,7 @@
     left: 50%;
     top: 65px;
     font-size: 28px;
+    cursor:pointer;
 }
 .textboxes2-1{
 
