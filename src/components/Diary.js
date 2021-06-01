@@ -4,11 +4,18 @@ import imgTest from '../badminton_1.jpg';
 import {GoSearch} from "react-icons/go";
 import { Link ,Route , withRouter, useLocation} from 'react-router-dom';
 import {db, firebaseApp, firebase} from '../firebase';
-import { set } from 'lodash';
+import _, { set } from 'lodash';
 import search_icon from '../loupe.png';
 import Menubar from './menu';
 import { createBrowserHistory } from 'history';  //버전 확인 버전 저거 해야 가능한걸로 알고 있음
 import nophoto from '../nophoto.jpg';
+import trash from '../trash.png';
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
 //아직 못한거 : 시간 설정, 인자 받아올 줄 몰라서 그룹마다 다르게 구현 안함 / 먹통된 파이어베이스만 잘 끌어오면 끝 / 
 /*
@@ -52,6 +59,8 @@ function Diary(props){
     fil = props.match.params.id; //filter 받아오는거
     const [load, setLoad] = useState(false);
     const [search, setSearch] = useState(fil=='&'?'':fil);
+    const [opened, setOpen] = useState(false);
+    const [d_info, setInfo] = useState({name:"", id:""});
     const searching = (evt)=>{
         setSearch(evt.target.value)
     }
@@ -76,6 +85,20 @@ function Diary(props){
         
     };
 
+    function delete_d(info){
+        //alert(info.id);
+        setInfo({name:info.title, id:info.id});
+        setOpen(true);
+    }
+    function final_delete(id){
+        if(id!=""){
+                ref.doc(id).delete().then(
+                ()=>{window.location.reload(true);}
+            );
+        }
+        
+    }
+
     const mounted = useRef(true);
     //망할 파이어베이스 때문에 잠깐 먹통이 된 녀석 아래 없애고 하면 될꺼임
     useEffect(()=>{
@@ -91,11 +114,10 @@ function Diary(props){
                             if(typeof data["Tag"].find(e=>fil.toLowerCase()==e.toLowerCase())=="undefined") return;
                         }
                         var image = (data["Img"]=="")?nophoto:data["Img"];
-                        diary.push({date:data["Date"], title:data["Title"], tag:data["Tag"], img:image, id:doc.id}); //여긴 테스트용 사진 넣어둠
+                        diary.unshift({date:data["Date"], title:data["Title"], tag:data["Tag"], img:image, id:doc.id}); //여긴 테스트용 사진 넣어둠
                         //date바꾸는 법만 알면 끝
                     })
                 }
-                diary.reverse();
                 setLoad(true);
             })
         }
@@ -146,6 +168,25 @@ function Diary(props){
         return(
             <div>
             <body>
+            <Dialog
+                open={opened}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+                >
+                <DialogTitle id="alert-dialog-title" style={{font:"40px"}}>&nbsp;Delete</DialogTitle>
+                <DialogContent>
+                <DialogContentText id="alert-dialog-description" color = "black">
+                    Do you want to delete diary <span class="just_bold">{d_info.name}</span>
+                </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                
+                <Button onClick={()=>setOpen(false)} >No!</Button>
+                <Button onClick={()=>final_delete(d_info.id)}  class="just_bold" style={{color:"#50C1E9"}} autofocus>
+                    Yes!
+                </Button>
+                </DialogActions>
+            </Dialog> 
                 <h1 class = "theme">Diarys</h1>
                 <button id= "new_post" onClick={gotoComponent}>+New Posting</button>
                 <div class = "search">
@@ -158,7 +199,7 @@ function Diary(props){
                     return(
                     <li class = "diary_d" id ={info.id}>
                         <table id = "table" class="diarytable_d">
-                            <tr><td class = "img" onClick = {()=>{gotopost(info.id)}}><img src={info.img} alt="NO IMAGE" class = "set_img"/></td></tr>
+                            <tr><td class = "img"><img src={info.img} alt="NO IMAGE" class = "set_img" onClick = {()=>{gotopost(info.id)}}/><img src={trash} style={{width:"40px", position:"absolute", top:"2%", right:"2%"}} onClick={()=>delete_d(info)}/></td></tr>
                             <tr><td class = "date">&nbsp;{info.date.year}.{info.date.month}.{info.date.day}</td></tr>
                             <tr><td class = "title" onClick = {()=>{gotopost(info.id)}}>{info.title}</td></tr>
                             <tr><td class = "tag">
