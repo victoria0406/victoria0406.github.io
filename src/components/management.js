@@ -52,7 +52,7 @@ const MoviesPage = (props) =>{
             await setMileages(data[1][0]);
         } 
         fetchAndSetUser();
-    },[])
+    },)
     //console.log(mymileage)
 
     function numberWithCommas(x) {
