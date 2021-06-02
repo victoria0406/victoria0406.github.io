@@ -302,7 +302,7 @@ function Main(props){
             }
             console.log(recieve)
             if (recieve.length == 0){
-                recieve.push({withgroup : <div className = "empty">Empty...</div>})
+                recieve.push({withgroup : <div className = "empty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Empty...</div>})
             }
             setChallenge(recieve.reverse());
             const dati = data[0];
