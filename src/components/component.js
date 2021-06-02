@@ -355,8 +355,7 @@ function tag_remove(){
                 
             </div>
             <div class = "setCal"></div>
-            <div className="table_border">
-            </div>
+            
             <table class = "components">              
                   
                   <tr>
@@ -371,7 +370,7 @@ function tag_remove(){
                         onMouseOut={(e) => {
                           e.currentTarget.src = small_img
                         }}
-                    style={{width:"100px", height:"100px"}}/></HtmlTooltip>
+                    style={{width:"100px", height:"100px", marginLeft:"6px"}}/></HtmlTooltip>
                     </td>
                 </tr>  
                 <tr>
@@ -385,7 +384,7 @@ function tag_remove(){
                         onMouseOut={(e) => {
                           e.currentTarget.src = big_img
                         }}
-                        style={{width:"100px", height:"100px", marginLeft:"5px"}}/></HtmlTooltip></td>
+                        style={{width:"100px", height:"100px", marginLeft:"10px"}}/></HtmlTooltip></td>
                   
                 </tr>
                 <tr>
@@ -397,7 +396,7 @@ function tag_remove(){
                       onMouseOut={(e) => {
                         e.currentTarget.src = img_img
                       }}
-                    style={{width:"100px", height:"100px", marginLeft:"5px"}}/></HtmlTooltip></td>
+                    style={{width:"100px", height:"100px", marginLeft:"8px"}}/></HtmlTooltip></td>
                 </tr>
                 <tr>
                     <td class = "icon" onClick = {() => icon1()}><HtmlTooltip title="match box" placement="left"><img src = {battle_img} 
@@ -408,7 +407,7 @@ function tag_remove(){
                     onMouseOut={(e) => {
                       e.currentTarget.src = battle_img
                     }}
-                    style={{width:"80px", height:"80px", marginTop:"5px", marginBottom:"5px" ,marginLeft:"13px"}}/></HtmlTooltip></td>
+                    style={{width:"80px", height:"80px", marginTop:"5px", marginBottom:"5px" ,marginLeft:"20px"}}/></HtmlTooltip></td>
                 </tr>
                 <tr>
                     <td class = "icon" onClick = {() => icon3()}><HtmlTooltip title="skill memo" placement="left"><img src = {feedback_img} 
@@ -419,9 +418,11 @@ function tag_remove(){
                     onMouseOut={(e) => {
                       e.currentTarget.src = feedback_img
                     }}
-                    style={{width:"100px", height:"100px", marginLeft:"5px"}}/></HtmlTooltip></td>
+                    style={{width:"100px", height:"100px", marginLeft:"10px"}}/></HtmlTooltip></td>
                 </tr>
             </table>
+            <div className="table_border">
+            </div>
             <div class = "Paper">
                 <div id = "component1"></div>
                 <div id = "10001"></div>
@@ -683,7 +684,7 @@ function icon4(){
         <div>
             <div class = "draggable4" id = {count_id4}><img src={grap} width= "50px" /></div>
             <div class = "delete4"  onClick = {() => delete4(thisid, count4)} >X</div>
-            <div class = "textboxes3"><textarea onfocusout="textareaToVar()"  id = {i4}></textarea></div>
+            <textarea class = "textboxes3" onfocusout="textareaToVar()"  id = {i4}></textarea>
         </div>
     );
     icon4_input.push(i4);
