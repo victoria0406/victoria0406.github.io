@@ -1,4 +1,3 @@
-
 #back{
     position: absolute;
     width: 42%;
@@ -10,6 +9,10 @@
     flex-direction: column;
     justify-content: center;
     border-left: 25px solid transparent;
+}
+
+.loading_back{
+    background-color: #E5F6FC;
 }
 
 
