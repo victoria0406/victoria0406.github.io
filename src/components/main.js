@@ -428,7 +428,7 @@ function Main(props){
             </Dialog> 
 
             <body class = "all">
-                <img src={ imgTitle} class = "img_title"/>
+                <img src={ imgTitle} class = "title_img"/>
                 <h1 class = "title_1">Welcome to</h1><h1 class = "title_2">{name}!</h1>
                 <Link to="./login"><button class = "logout">logout</button></Link>
                 <Link to="/group/0"><button class = "group">group</button></Link>
