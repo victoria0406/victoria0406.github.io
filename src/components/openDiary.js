@@ -30,7 +30,7 @@ function OpenDiary(props){
                 date = doc.data()["Date"];
                 tag = doc.data()["Tag"]
                 for (var i = 0; i < doc.data().icon1_locate.length; i++){
-                    icon1(doc.data().icon1_input[i], doc.data().icon1_text, doc.data().icon1_img, parseInt(doc.data().icon1_locate[i]["x"])-150, doc.data().icon1_locate[i]["y"]);
+                    icon1(doc.data().icon1_input, doc.data().icon1_text, doc.data().icon1_img, parseInt(doc.data().icon1_locate[i]["x"])-150, doc.data().icon1_locate[i]["y"]);
                 }
                 for (var i = 0; i < doc.data().icon2_input.length; i++){
                     icon2(doc.data().icon2_input[i],parseInt(doc.data().icon2_locate[i]["x"])-150, doc.data().icon2_locate[i]["y"]);
