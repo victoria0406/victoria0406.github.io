@@ -221,21 +221,23 @@ body{
 
 .title_1{
     position: absolute;
-    left: 385px;
+    left: 380px;
     top: 85px;
     font-size: 70px;
     font-family: "Title";
     letter-spacing: 3px;
+    width:1000px
 }
 
 .title_2{
     position: absolute;
-    left: 765px;
+    left: 760px;
     top: 65px;
     font-size: 90px;
     font-weight: bolder;
     font-family: "Title";
     letter-spacing: 8px;
+    width:1000px
 }
 
 .toMessage{
