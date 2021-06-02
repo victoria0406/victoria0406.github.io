@@ -85,11 +85,12 @@ function Group(props){
       if (!load){
           setTimeout((()=>setLoad(true)),2000);
           return (
+            <body className = "loading_back">
             <div id="load">
-                <div id="load_m">LOADING</div>
-                <div>Get Mileage and Grow Trees!!</div>
-                <img src={loading}/>
-            </div>);
+                {/* <div id="load_m">LOADING</d_baiv>
+                <div>Get Mileage and Grow Trees!!</div> */}
+                <img src={loading} style={{width:"90%", height:"80%"}}/>
+            </div></body>);
       }
       
       
