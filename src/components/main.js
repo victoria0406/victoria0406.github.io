@@ -314,7 +314,7 @@ function Main(props){
         console.log(mychallenges);
         //setChallenge(recieve.reverse());
         
-    },)
+    },[])
 
     
 
