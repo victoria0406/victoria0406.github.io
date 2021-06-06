@@ -18,6 +18,7 @@ import tree3_mine  from '../tree3_mine.png'
 import tree4_mine  from '../tree4_mine.png'
 import tree5_mine  from '../tree5_mine.png'
 import tree6_mine  from '../tree6_mine.png'
+import { createBrowserHistory } from 'history'; 
 //import fakeStoreLatLngData from './data/generated-data.json';
 //import Hexbin from './Hexbin';
 //수정 금지 (사이즈 건들면 줌인줌아웃 불가능)
@@ -110,7 +111,7 @@ var group_info=[
 const ref = db.collection("Groups");
   group_info.map((info)=>{
     ref.doc(info.name).get().then((doc)=>{info.mileage = doc.data()["mileage"]})})
-
+const history = createBrowserHistory({forceRefresh: true });
 class Mapping extends React.Component {
   constructor(props){
     super(props);
@@ -122,6 +123,10 @@ class Mapping extends React.Component {
     infonum:0,
     position:group_info[5].position
   };
+  
+   gotomain = (name)=>{
+    history.push({pathname:'/main',state:{group:name, user:this.uid}});
+  }
  
   onMarkerClick = (props, marker, e) =>{
     console.log(props.id);
@@ -186,6 +191,7 @@ class Mapping extends React.Component {
         {
             group_info.map((info,i)=>{
               console.log(info);
+              if(info.my==false){
                 return (
                   <Marker 
                     key = {info.name}
@@ -195,7 +201,21 @@ class Mapping extends React.Component {
                     icon = {this.choosetree(info.mileage,info.my)}
                     >
                   </Marker>
-                  )
+                  );
+              }
+                
+              else {
+                return(
+                    <Marker 
+                    key = {info.name}
+                    id = {i}
+                    onMouseover={this.onMarkerClick}
+                    position={info.position}
+                    onClick = {()=>this.gotomain(info.name)}
+                    icon = {this.choosetree(info.mileage,info.my)}
+                    >
+                  </Marker>
+              );}
                 })
         }
         <InfoWindow
