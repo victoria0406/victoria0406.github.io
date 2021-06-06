@@ -126,6 +126,16 @@
   font-weight: 600;
   letter-spacing: 1px;
 }
+
+.real_rejected{
+  font-size:17px;
+  color:gray;
+  text-align:center;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration:line-through;
+}
+
 .real_lose{
   font-size:17px;
   color:#FF9292;
