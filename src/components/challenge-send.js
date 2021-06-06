@@ -3,7 +3,7 @@ import React,{useState,useEffect} from 'react';
 import imgfile from '../circle.jpg';
 import { Link } from 'react-router-dom';
 import {db,firebaseApp, firebase} from "../firebase.js"
-import Menubar from './menu';
+import Menubar from './menu2';
 import '../style/send.css';
 
 

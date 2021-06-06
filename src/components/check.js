@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../style/check.css';
 import {db,firebaseApp, firebase} from "../firebase.js"
-import Menubar from './menu';
+import Menubar from './menu2';
 
 function check(props){
     
