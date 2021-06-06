@@ -52,7 +52,7 @@ const MoviesPage = (props) =>{
             await setMileages(data[1][0]);
         } 
         fetchAndSetUser();
-    },)
+    },[])
     //console.log(mymileage)
 
     function numberWithCommas(x) {
@@ -72,6 +72,7 @@ const MoviesPage = (props) =>{
         else if(state[i][0]==0) check="receive";
         else if(state[i][1]==2) check="win";
         else if(state[i][1]==3) check="lose";
+        else if(state[i][0]==3) check="rejected";
         else if(state[i][1]==4) check="tie";
         mystate.push(check);
     }
@@ -90,7 +91,7 @@ const MoviesPage = (props) =>{
         for (var i=0;i<store.length;i++){
             var new_challenge={
                 accept:store[i].accept,
-                bet:store[i].bet,
+                bet:store[i].bet*1,
                 contents:store[i].contents,
                 date:store[i].date,
                 send:store[i].send,
@@ -105,6 +106,7 @@ const MoviesPage = (props) =>{
         });
     }
     function win_button(index){
+        console.log("hi");
         var docRef=db.collection("Groups").doc(mygroup);
         
         mychallenges[index].accept=2; //2->win
@@ -117,7 +119,7 @@ const MoviesPage = (props) =>{
         for (var i=0;i<store.length;i++){
             var new_challenge={
                 accept:store[i].accept,
-                bet:store[i].bet,
+                bet:store[i].bet*1,
                 contents:store[i].contents,
                 date:store[i].date,
                 send:store[i].send,
@@ -144,7 +146,7 @@ const MoviesPage = (props) =>{
         for (var i=0;i<store.length;i++){
             var new_challenge={
                 accept:store[i].accept,
-                bet:store[i].bet,
+                bet:store[i].bet*1,
                 contents:store[i].contents,
                 date:store[i].date,
                 send:store[i].send,
@@ -180,6 +182,7 @@ const MoviesPage = (props) =>{
         else if(mystate[l]=="win") gg[l].state=<div className="real_win">WIN!</div>
         else if(mystate[l]=="lose") gg[l].state=<div className="real_lose">LOSE</div>
         else if(mystate[l]=="tie") gg[l].state=<div className="real_tie">TIE</div>
+        else if(mystate[l]=="rejected") gg[l].state=<div className="real_rejected">Rejected</div>
     }
 
 
