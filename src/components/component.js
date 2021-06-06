@@ -510,8 +510,8 @@ function Uploading(){
 function icon1(){
     const comp = (
         <div id = "stop">
-            <div className = "draggable" id = {count_id1}><img src={grap} width= "50px" /></div>
-            <div class = "delete1" id = "delete1" onClick = {()=>delete1()}>x</div>
+            <div className = "draggable" id = {count_id1}>&nbsp;G R A B &nbsp; A r e a</div>
+            <div class = "delete1" id = "delete1" onClick = {()=>delete1()}></div>
             <div class = "scoresheet">
                 <div class = "putimg" id = "putimg">
                     <div class = "addimg" onClick = {()=>Uploading()} >+</div>
@@ -589,7 +589,7 @@ function icon2(){
     const count2 = count_id2;
     const comp = (    
         <div>
-            <div class = "draggable2" id = {count_id2}><img src={grap} width= "50px" /></div>
+            <div class = "draggable2" id = {count_id2}>&nbsp;G R A B &nbsp; A r e a</div>
             <div class = "delete2"  onClick = {() => delete2(thisid,count2)}>X</div>
             <textarea class = "textboxes" onfocusout="textareaToVar()"  id = {i2}></textarea>
         </div>
@@ -630,7 +630,7 @@ function icon3(){
     icon3_locate.push([count_id3,[0,0]])
     const comp = (    
         <div>
-            <div class = "draggable3" id = {count_id3}><img src={grap} width= "50px" /></div>
+            <div class = "draggable3" id = {count_id3}>&nbsp;G R A B &nbsp; A r e a</div>
             <div class = "delete3"  onClick = {() => delete3(thisid,count3)}>X</div>
             <div class = "textboxes2" style={{position: "absolute",width: "500px",height: "500px", font: "100", background: "#ffffff", border: "4px solid #50C1E9"}}>
                 <div style={{height: "225px", margin:"0px 10px"}}>
@@ -684,9 +684,9 @@ function icon4(){
     const count4 = count_id4;
     const comp = (    
         <div>
-            <div class = "draggable4" id = {count_id4}><img src={grap} width= "50px" /></div>
+            <div class = "draggable4" id = {count_id4}>&nbsp;G R A B &nbsp; A r e a</div>
             <div class = "delete4"  onClick = {() => delete4(thisid, count4)} >X</div>
-            <textarea class = "textboxes3" onfocusout="textareaToVar()"  id = {i4}></textarea>
+            <div class = "textboxes3"><textarea onfocusout="textareaToVar()"  id = {i4}></textarea></div>
         </div>
     );
     icon4_input.push(i4);
@@ -768,7 +768,7 @@ function icon5(){
     const comp = (    
         <div>
             <div class = "imgonly"></div>
-            <div class = "draggable5" id = {count_id5}><img src={grap} width= "50px" /></div>
+            <div class = "draggable5" id = {count_id5}>&nbsp;G R A B &nbsp; A r e a</div>
             <div class = "delete5"  onClick = {() => delete2(thisid)}>X</div>
             <div id = {i5}>
                 <div class = "addimg2" onClick = {()=>Uploading2(id_5)}>+</div>
