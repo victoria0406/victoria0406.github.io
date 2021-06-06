@@ -96,7 +96,7 @@ function Group(props){
       else{ console.log(my_groups);
         return (
         <div id="all">
-            <Mapping mygroups={my_groups}/>
+            <Mapping mygroups={my_groups} uid = {uid}/>
             <div id = "my_group">
                 <div id="header">My Group</div>
                 {
