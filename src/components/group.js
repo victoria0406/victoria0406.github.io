@@ -83,9 +83,8 @@ function Group(props){
         get_info(uid);
       });
       if (!load){
-          setTimeout((()=>setLoad(true)),2000);
           return (
-            <body className = "loading_back">
+            <body className = "loading_back" onClick={()=>{setLoad(true)}}>
             <div id="load">
                 {/* <div id="load_m">LOADING</d_baiv>
                 <div>Get Mileage and Grow Trees!!</div> */}
