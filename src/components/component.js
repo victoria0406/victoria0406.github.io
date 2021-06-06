@@ -154,6 +154,7 @@ function Component(props){
   const handleClickOpen = () => {
       //setOpen(true);
       document.getElementById("get_mileage").style.display='block';
+      document.getElementById("get_mileage").style.display='block';
   };
 
   const handleClose = () => {
@@ -469,15 +470,16 @@ function tag_remove(){
             
             <button class = "confirm" onClick = {handleClickOpen}>Confirm</button>
             <Menubar group={props.location.state.group} user={props.location.state.user}/>
-            <div id ="get_mileage">
+            <div id="gray"></div>
+              <div id ="get_mileage">
               <div id="pop_title">+5000M</div>
               <div id= "pop_title">Write the post! Good job!</div>
               <h4 style={{margin:"20px 50px 10px 50px"}}>Tags</h4>
               <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Put tag and <span className="just_bold">Enter</span> or Push <span className="just_bold">Spacebar</span>:&nbsp;&nbsp;</span><span class="Tag_i">#tag</span>
               <div id="reged_tag">{tags.map((t)=><span><span class="Tag_i">#{t} </span>&nbsp;</span>)}<input style={{width:"200px"}} value={tag} onChange={(e)=>{setTag(e.target.value)}}   onKeyDown={e=>{if(e.key==' '||e.key=='Enter') regtag(); else if(e.key=='Backspace'&&(tag==''||tag==' '))tag_remove();}}/></div>
-              <Button id="mileget" onClick={handleClose} autoFocus style={{margin:"10px 130px"}}>
-                Get Mileage!
-            </Button>
+              <Button id="mileget" onClick={handleClose} autoFocus >
+                    Get Mileage!
+              </Button>
             </div>
         </body>
     )
