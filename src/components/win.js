@@ -2,7 +2,7 @@ import React from 'react';
 import imgfile from '../congratulations.png';
 import '../style/win.css';
 import { Link } from 'react-router-dom';
-import Menubar from './menu';
+import Menubar from './menu2';
 
 function win(props){
     return(
