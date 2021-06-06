@@ -83,20 +83,18 @@ function Group(props){
         get_info(uid);
       });
       if (!load){
+          setTimeout((()=>setLoad(true)),5000);
           return (
-            <body className = "loading_back" onClick={()=>{setLoad(true)}}>
             <div id="load">
-                {/* <div id="load_m">LOADING</d_baiv>
-                <div>Get Mileage and Grow Trees!!</div> */}
-                <img src={loading} style={{width:"90%", height:"80%"}}/>
-            </div></body>);
+                <img src={loading} style={{width:"60%", height:"60%", left:"20%", top:"20%", position:"absolute"}}/>
+            </div>);
       }
       
       
       else{ console.log(my_groups);
         return (
         <div id="all">
-            <Mapping mygroups={my_groups} uid = {uid}/>
+            <Mapping mygroups={my_groups}/>
             <div id = "my_group">
                 <div id="header">My Group</div>
                 {
