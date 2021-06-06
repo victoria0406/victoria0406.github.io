@@ -630,7 +630,7 @@ function Jan(){
                     <td class = "notday" id = "1-4" width = "100px">30{tagfunc(5,30)}</td> 
                     <td class = "notday" id = "1-5" width = "100px">31{tagfunc(5,31)}</td> 
                     <td class = "day" id = "1-6" width = "100px">1{tagfunc(6,1)}</td>
-                    <td class = "day" id = "1-7" width = "100px">2<{tagfunc(6,2)}/td> 
+                    <td class = "day" id = "1-7" width = "100px">2{tagfunc(6,2)}</td> 
                 </tr>
                 <tr class = "week" height = "77px">
                     <td class = "day" id = "2-1">3{tagfunc(6,3)}</td>
