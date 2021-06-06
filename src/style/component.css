@@ -235,27 +235,28 @@
 
 
 .draggable{
-    width: 50px;
+    width: 550px;
     height: 50px;
-    background-color: #50c0e939;
+    background-color: #c1c1c13b;
     position: absolute;
     
-    left: 608px;
-    top: 30px;
+    left: 0px;
+    top: 0px;
     z-index: 10;
-    font-size: 30px;
+    font-size: 35px;
     text-align:center;
     vertical-align:center;
-    color: #50c0e9ad;
+    color: #7b7b7b53;
     cursor:move;
+    font-weight: 700;
 }
 .draggable:hover{
-    background-color:#50c0e97d;
+    background-color:#87878739;
     color: #50c0e9de; 
-    cursor:move;
+    cursor:move
 }
 .delete1:hover{
-    background-color:#50c0e97d;
+    background-color:#87878739;
     color: #50c0e9de; 
     cursor:pointer;
 }
@@ -263,15 +264,15 @@
 .delete1{
     width: 50px;
     height: 50px;
-    background-color: #50c0e939;
+    background-color: #c1c1c13b;
     position: absolute;
-    left: 608px;
-    top: 550px;
+    left: 550px;
+    top: 0px;
     z-index: 10;
     font-size: 30px;
     text-align:center;
     vertical-align:center;
-    color: #50c0e9ad;
+    color: #7b7b7b53;
 }
 
 
@@ -372,6 +373,7 @@
 
 .textboxes{
     position: absolute;
+    top: 50px;
     width: 300px;
     height: 300px;
     font-size: 20px;
@@ -388,80 +390,82 @@
 .delete2{
     width: 50px;
     height: 50px;
-    background-color: #50c0e93e;
+    background-color: #c1c1c13b;
     position: absolute;
-    left: 307px;
-    top: 270px;
+    left: 250px;
+    top: 0px;
     z-index: 10;
     font-size: 30px;
     text-align:center;
     vertical-align:top;
     text-align: center;
-    color: #50c0e9ad;  
+    color: #7b7b7b53;   
 }
 
 .draggable2{
-    width: 50px;
+    width: 250px;
     height: 50px;
-    background-color: #50c0e93e;
+    background-color: #c1c1c13b;
     position: absolute;
-    left: 307px;
+    left: 0px;
     top: 0px;
     z-index: 10;
     font-size: 30px;
     text-align:center;
     vertical-align:center;
     text-align: center;
-    color: #50c0e9ad;
+    color: #7b7b7b53;
+    font-weight: 700;
 }
 
 .draggable2:hover{
-    background-color:#50c0e97d;
+    background-color:#87878739;
     color: #50c0e9de; 
     cursor:move;
 }
 .delete2:hover{
-    background-color:#50c0e97d;
+    background-color:#87878739;
     color: #50c0e9de; 
     cursor:pointer;
 }
 
 
 .draggable3{
-    width: 50px;
+    width: 450px;
     height: 50px;
-    background-color: #50c0e93e;
+    background-color: #c1c1c13b;
     position: absolute;
-    left: 507px;
+    left: 0px;
     top: 0px;
     z-index: 10;
-    font-size: 30px;
+    font-size: 35px;
     text-align:center;
     vertical-align:center;
     text-align: center;
-    color: #50c0e9ad;
+    color: #7b7b7b53;
+    font-weight: 700;
 }
 .delete3{
     width: 50px;
     height: 50px;
-    background-color: #50c0e93e;
+    background-color: #c1c1c13b;
     position: absolute;
-    left: 507px;
-    top: 472px;
+    left: 450px;
+    top: 0px;
     z-index: 10;
     font-size: 30px;
     text-align:center;
     vertical-align:top;
     text-align: center;
-    color: #50c0e9ad;  
+    color: #7b7b7b53; 
 }
 .draggable3:hover{
-    background-color:#50c0e97d;
+    background-color:#87878739;
     color: #50c0e9de; 
     cursor:move;
 }
 .delete3:hover{
-    background-color:#50c0e97d;
+    background-color:#87878739;
     color: #50c0e9de; 
     cursor:pointer;
 }
@@ -469,90 +473,94 @@
 .textboxes3{
     position: absolute;
     width: 500px;
-    height: 80px;
+    height: 200px;
+    top: 50px;
     font-size: 50px;
 }
 
 .draggable4{
-    width: 50px;
+    width: 450px;
     height: 50px;
-    background-color: #50c0e93e;
+    background-color: #c1c1c13b;
     position: absolute;
-    left: 507px;
-    top: -10px;
+    left: 0px;
+    top: 0px;
     z-index: 10;
-    font-size: 20px;
+    font-size: 35px;
     text-align:center;
     vertical-align:center;
     text-align: center;
-    color: #50c0e9ad;
+    color: #7b7b7b53;
+    font-weight: 700;
 }
 .delete4{
     width: 50px;
     height: 50px;
-    background-color: #50c0e93e;
+    background-color: #c1c1c13b;
     position: absolute;
-    left: 507px;
-    top: 60px;
+    left: 450px;
+    top: 0px;
     z-index: 10;
     font-size: 30px;
     text-align:center;
     vertical-align:top;
     text-align: center;
-    color: #50c0e9ad;  
+    color: #7b7b7b53; 
 }
 
 .draggable4:hover{
-    background-color:#50c0e97d;
+    background-color:#87878739;
     color: #50c0e9de; 
     cursor:move;
 }
 .delete4:hover{
-    background-color:#50c0e97d;
+    background-color:#87878739;
     color: #50c0e9de; 
     cursor:pointer;
 }
 
 .draggable5{
-    width: 50px;
+    width: 650px;
     height: 50px;
-    background-color: #50c0e93e;
+    background-color: #c1c1c13b;
     position: absolute;
-    left: 707px;
-    top: 20px;
+    left: 0px;
+    top: 0px;
     z-index: 10;
-    font-size: 30px;
+    font-size: 35px;
     text-align:center;
     vertical-align:center;
     text-align: center;
-    color: #50c0e9ad;
+    color: #7b7b7b53;
+    font-weight: 700;
 }
 .delete5{
     width: 50px;
     height: 50px;
-    background-color: #50c0e93e;
+    background-color: #c1c1c13b;
     position: absolute;
-    left: 707px;
-    top: 350px;
+    left: 650px;
+    top: 0px;
     z-index: 10;
     font-size: 30px;
     text-align:center;
     vertical-align:top;
     text-align: center;
-    color: #50c0e9ad;  
+    color: #7b7b7b53;  
 }
 .draggable5:hover{
-    background-color:#50c0e97d;
+    background-color:#87878739;
     color: #50c0e9de; 
     cursor:move;
 }
 .delete5:hover{
-    background-color:#50c0e97d;
+    background-color:#87878739;
     color: #50c0e9de; 
     cursor:pointer;
 }
 .imgonly{
     position: absolute;
+    top: 50px;
     width: 700px;
     height: 400px;
     border-radius: 30px;
@@ -602,6 +610,7 @@
 
 .textboxes2{
     border-radius : 30px;
+    top: 50px;
 
 }
 #reged_tag{
