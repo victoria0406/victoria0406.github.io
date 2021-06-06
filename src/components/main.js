@@ -583,13 +583,13 @@ function Main(props){
                                 <td class = "day" id = "5-7">29{tagfunc(5,29)}</td> 
                             </tr>
                             <tr class = "week" height = "77px">
-                                <td class = "day" id = "6-1">30</td>
-                                <td class = "day" id = "6-2">31</td>
-                                <td class = "notday" id = "6-3">1</td>
-                                <td class = "notday" id = "6-4">2</td> 
-                                <td class = "notday" id = "6-5">3</td> 
-                                <td class = "notday" id = "6-6">4</td>
-                                <td class = "notday" id = "6-7">5</td> 
+                                <td class = "day" id = "6-1">30{tagfunc(5,30)}</td>
+                                <td class = "day" id = "6-2">31{tagfunc(5,31)}</td>
+                                <td class = "notday" id = "6-3">1{tagfunc(6,1)}</td>
+                                <td class = "notday" id = "6-4">2{tagfunc(6,2)}</td> 
+                                <td class = "notday" id = "6-5">3{tagfunc(6,3)}</td> 
+                                <td class = "notday" id = "6-6">4{tagfunc(6,4)}</td>
+                                <td class = "notday" id = "6-7">5{tagfunc(6,5)}</td> 
                             </tr>
                         </tbody>
                     </table>
@@ -624,58 +624,58 @@ function Jan(){
             </thead>
             <tbody>
                 <tr class = "week" height = "77px" border-top = "2px solid #dfdfdf;">
-                    <td class = "notday" id = "1-1" width = "100px">27</td>
-                    <td class = "notday" id = "1-2" width = "100px">28</td>
-                    <td class = "notday" id = "1-3" width = "100px">29</td>
-                    <td class = "notday" id = "1-4" width = "100px">30</td> 
-                    <td class = "notday" id = "1-5" width = "100px">31</td> 
-                    <td class = "day" id = "1-6" width = "100px">1</td>
-                    <td class = "day" id = "1-7" width = "100px">2</td> 
+                    <td class = "notday" id = "1-1" width = "100px">27{tagfunc(5,27)}</td>
+                    <td class = "notday" id = "1-2" width = "100px">28{tagfunc(5,28)}</td>
+                    <td class = "notday" id = "1-3" width = "100px">29{tagfunc(5,29)}</td>
+                    <td class = "notday" id = "1-4" width = "100px">30{tagfunc(5,30)}</td> 
+                    <td class = "notday" id = "1-5" width = "100px">31{tagfunc(5,31)}</td> 
+                    <td class = "day" id = "1-6" width = "100px">1{tagfunc(6,1)}</td>
+                    <td class = "day" id = "1-7" width = "100px">2<{tagfunc(6,2)}/td> 
                 </tr>
                 <tr class = "week" height = "77px">
-                    <td class = "day" id = "2-1">3</td>
-                    <td class = "day" id = "2-2">4</td>
-                    <td class = "day" id = "2-3">5</td>
-                    <td class = "day" id = "2-4">6</td>
-                    <td class = "day" id = "2-5">7</td>
-                    <td class = "day" id = "2-6">8</td>
-                    <td class = "day" id = "2-7">9</td>
+                    <td class = "day" id = "2-1">3{tagfunc(6,3)}</td>
+                    <td class = "day" id = "2-2">4{tagfunc(6,4)}</td>
+                    <td class = "day" id = "2-3">5{tagfunc(6,5)}</td>
+                    <td class = "day" id = "2-4">6{tagfunc(6,6)}</td>
+                    <td class = "day" id = "2-5">7{tagfunc(6,7)}</td>
+                    <td class = "day" id = "2-6">8{tagfunc(6,8)}</td>
+                    <td class = "day" id = "2-7">9{tagfunc(6,9)}</td>
                 </tr>
                 <tr class = "week" height = "77px">
-                    <td class = "day" id = "3-1">10</td>
-                    <td class = "day" id = "3-2">11</td>
-                    <td class = "day" id = "3-3">12</td>
-                    <td class = "day" id = "3-4">13</td> 
-                    <td class = "day" id = "3-5">14</td> 
-                    <td class = "day" id = "3-6">15</td>
-                    <td class = "day" id = "3-7">16</td> 
+                    <td class = "day" id = "3-1">10{tagfunc(6,10)}</td>
+                    <td class = "day" id = "3-2">11{tagfunc(6,11)}</td>
+                    <td class = "day" id = "3-3">12{tagfunc(6,12)}</td>
+                    <td class = "day" id = "3-4">13{tagfunc(6,13)}</td> 
+                    <td class = "day" id = "3-5">14{tagfunc(6,14)}</td> 
+                    <td class = "day" id = "3-6">15{tagfunc(6,15)}</td>
+                    <td class = "day" id = "3-7">16{tagfunc(6,16)}</td> 
                 </tr>
                 <tr class = "week" height = "77px">
-                    <td class = "day" id = "4-1">17</td>
-                    <td class = "day" id = "4-2">18</td>
-                    <td class = "day" id = "4-3">19</td>
-                    <td class = "day" id = "4-4">20</td> 
-                    <td class = "day" id = "4-5">21</td> 
-                    <td class = "day" id = "4-6">22</td>
-                    <td class = "day" id = "4-7">23</td> 
+                    <td class = "day" id = "4-1">17{tagfunc(6,17)}</td>
+                    <td class = "day" id = "4-2">18{tagfunc(6,18)}</td>
+                    <td class = "day" id = "4-3">19{tagfunc(6,19)}</td>
+                    <td class = "day" id = "4-4">20{tagfunc(6,20)}</td> 
+                    <td class = "day" id = "4-5">21{tagfunc(6,21)}</td> 
+                    <td class = "day" id = "4-6">22{tagfunc(6,22)}</td>
+                    <td class = "day" id = "4-7">23{tagfunc(6,23)}</td> 
                 </tr>
                 <tr class = "week" height = "77px">
-                    <td class = "day" id = "5-1">24</td>
-                    <td class = "day" id = "5-2">25</td>
-                    <td class = "day" id = "5-3">26</td>
-                    <td class = "day" id = "5-4">27</td> 
-                    <td class = "day" id = "5-5">28</td> 
-                    <td class = "day" id = "5-6">29</td>
-                    <td class = "day" id = "5-7">30</td> 
+                    <td class = "day" id = "5-1">24{tagfunc(6,24)}</td>
+                    <td class = "day" id = "5-2">25{tagfunc(6,25)}</td>
+                    <td class = "day" id = "5-3">26{tagfunc(6,26)}</td>
+                    <td class = "day" id = "5-4">27{tagfunc(6,27)}</td> 
+                    <td class = "day" id = "5-5">28{tagfunc(6,28)}</td> 
+                    <td class = "day" id = "5-6">29{tagfunc(6,29)}</td>
+                    <td class = "day" id = "5-7">30{tagfunc(6,30)}</td> 
                 </tr>
                 <tr class = "week" height = "77px">
-                    <td class = "day" id = "6-1">31</td>
-                    <td class = "notday" id = "6-2">1</td>
-                    <td class = "notday" id = "6-3">2</td>
-                    <td class = "notday" id = "6-4">3</td> 
-                    <td class = "notday" id = "6-5">4</td> 
-                    <td class = "notday" id = "6-6">5</td>
-                    <td class = "notday" id = "6-7">6</td> 
+                    <td class = "day" id = "6-1">31{tagfunc(6,31)}</td>
+                    <td class = "notday" id = "6-2">1{tagfunc(7,1)}</td>
+                    <td class = "notday" id = "6-3">2{tagfunc(7,2)}</td>
+                    <td class = "notday" id = "6-4">3{tagfunc(7,3)}</td> 
+                    <td class = "notday" id = "6-5">4{tagfunc(7,4)}</td> 
+                    <td class = "notday" id = "6-6">5{tagfunc(7,5)}</td>
+                    <td class = "notday" id = "6-7">6{tagfunc(7,6)}</td> 
                 </tr>
             </tbody>
         </table>
