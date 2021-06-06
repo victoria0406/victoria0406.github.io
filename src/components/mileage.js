@@ -144,7 +144,7 @@ function Mileage(props){
         // //console.log(mileage1)
         // setRanks(mileage1[0])
         // //console.log(ranks)
-    },)
+    },[])
     //console.log(ranks)
     //console.log(mileages)
     //console.log(mymileages)
@@ -159,7 +159,7 @@ function Mileage(props){
         console.log(cname);
     };
 
-    const handleKeyPress = (e) => {
+    const handleKeyPress = async(e) => {
 
         if (e.key === "Enter") {
             var add = {
@@ -168,12 +168,13 @@ function Mileage(props){
             }
             var docRef = db.collection("users").doc(user);
 
-            docRef.update({
+            await docRef.update({
                 goal: firebase.firestore.FieldValue.arrayUnion(add)
             });
         
             setStyle(hstyle);
             setCname("goal-inner");
+            window.location.reload();
         }
     };
 
@@ -194,6 +195,7 @@ function Mileage(props){
 
         //console.log("dkdkdkdkdk");
         setOpen(false);
+        window.location.reload();
 
     };
 
@@ -211,7 +213,7 @@ function Mileage(props){
         data: getMovies
     });
 
-    function success_button(rgoal, rstate,l){
+    async function success_button(rgoal, rstate,l){
         
         var docRef = db.collection("users").doc(user);
         
@@ -230,7 +232,7 @@ function Mileage(props){
                 state : store[i].state
             }
             //console.log(new_goal);
-            docRef.update({
+            await docRef.update({
                 goal: firebase.firestore.FieldValue.arrayUnion(new_goal)
             });
         }
@@ -241,7 +243,11 @@ function Mileage(props){
                 mileage:numbers+5000
             });
         } 
+        if(rstate =="fail"){
+            window.location.reload();
+        }
         //console.log([rgoal,rstate,l])
+        //<Link to={{pathname :'./mileage', state : {group: props.location.state.group, user:props.location.state.user}}}></Link>
     }
 
     var gg=[];
