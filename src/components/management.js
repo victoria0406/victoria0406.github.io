@@ -68,6 +68,7 @@ const MoviesPage = (props) =>{
     for (var i=0;i<state.length;i++){
         var check="";
         if(state[i][0]==1 && state[i][1]==1) check="accepted";
+        else if (state[i][0]==0 && state[i][1]==1) check="accepted";
         else if(state[i][0]==1 && state[i][1]==0) check="wait";
         else if(state[i][0]==0) check="receive";
         else if(state[i][1]==2) check="win";
@@ -175,10 +176,10 @@ const MoviesPage = (props) =>{
     for (var l=0;l<mystate.length;l++){
         if(mystate[l]=="accepted"){
             const index=l;
-            gg[l].state=<div><Link to={{pathname :'./win', state : {group: props.location.state.group, user:props.location.state.user}}}><button className = "win" onClick={(e)=>win_button(index)}>WIN!</button></Link>&nbsp;&nbsp;<Link to={{pathname :'./lose', state : {group: props.location.state.group, user:props.location.state.user}}}><button className = "lose" onClick={(e)=>lose_button(index)}>LOSE</button></Link>&nbsp;&nbsp;<Link to={{pathname :'./tie', state : {group: props.location.state.group, user:props.location.state.user}}}><button className = "tie" onClick={(e)=>tie_button(index)}>TIE</button></Link></div>
+            gg[l].state=<div><Link to={{pathname :'./win', state : {group: props.location.state.group, user:props.location.state.user}}}><button className = "win" onClick={(e)=>win_button(index)}>WIN!</button></Link>&nbsp;&nbsp;<button className = "lose" onClick={(e)=>lose_button(index)}>LOSE</button>&nbsp;&nbsp;<button className = "tie" onClick={(e)=>tie_button(index)}>TIE</button></div>
         }
         else if(mystate[l]=="wait") gg[l].state=<div className="wait">Challenge Sent!</div>
-        else if(mystate[l]=="receive") gg[l].state=<div><button className = "win">WIN!</button>&nbsp;&nbsp;<button className = "lose">LOSE</button>&nbsp;&nbsp;<button className = "tie">TIE</button></div>
+        else if(mystate[l]=="receive") gg[l].state="recieve"
         else if(mystate[l]=="win") gg[l].state=<div className="real_win">WIN!</div>
         else if(mystate[l]=="lose") gg[l].state=<div className="real_lose">LOSE</div>
         else if(mystate[l]=="tie") gg[l].state=<div className="real_tie">TIE</div>
@@ -191,6 +192,14 @@ const MoviesPage = (props) =>{
     //     return movies;
     // }
 
+    var gg1=[];
+
+    for(var l=0;l<gg.length;l++){
+        if(gg[l].state!="recieve"){
+            gg1[gg1.length]=gg[l];
+        }
+    }
+    console.log(gg1);
     const getMovies = () => {
         const movies = mychallenges;
         console.log(gg)
@@ -210,8 +219,8 @@ const MoviesPage = (props) =>{
     }
     
     const{ data, pageSize, currentPage } = movies;
-    const pageMovies = paginate(gg.reverse(), currentPage, 5);
-    const {length: count } = gg;
+    const pageMovies = paginate(gg1.reverse(), currentPage, 5);
+    const {length: count } = gg1;
 
     return (
         <>
