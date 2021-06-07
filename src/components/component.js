@@ -120,6 +120,7 @@ function textareaToVar(){
 }
 
 const tags = [];
+var uploading_name = '';
 
 function Component(props){
 
@@ -154,7 +155,7 @@ function Component(props){
   const handleClickOpen = () => {
       //setOpen(true);
       document.getElementById("get_mileage").style.display='block';
-      document.getElementById("get_mileage").style.display='block';
+      document.getElementById("gray").style.display='block';
   };
 
   const handleClose = () => {
@@ -310,6 +311,7 @@ function tag_remove(){
                   .getDownloadURL()
                   .then(url => {
                     setUrl(url);
+                    Uploading();
                   });
                 }
                 
@@ -323,8 +325,9 @@ function tag_remove(){
 
         const hiddenFileInput = React.useRef(null);
 
-        function upload_click(e){
+        function upload_click(name){
           //document.getElementById("file").click();
+          uploading_name = name;
           hiddenFileInput.current.click();
         }
 
@@ -342,6 +345,75 @@ function tag_remove(){
           },
         }))(Tooltip);
 
+        function icon1(){
+          const comp = (
+              <div id = "stop">
+                  <div className = "draggable" id = {count_id1}>&nbsp;G R A B &nbsp; A r e a</div>
+                  <div class = "delete1" id = "delete1" onClick = {()=>delete1()}>X</div>
+                  <div class = "scoresheet">
+                      <div class = "putimg" id = "putimg">
+                          <div class = "addimg" onClick = {(e)=>upload_click('putimg')} >+</div>
+                      </div>
+                      <table class = "set" >
+                          <tr>
+                              <th class = "gamescore">Game score</th>
+                          </tr>
+                          <tr>
+                              <td class = "setnum">set1</td><td><input class = "num" type = "text" id = {count_id1+1}></input></td><td width = "8px;" text-align = "center;">:</td><td><input class = "num" type = "text" id = {count_id1 + 2}></input></td>
+                          </tr>
+                          <tr>
+                              <td class = "setnum">set2</td><td><input class = "num" type = "text" id = {count_id1 + 3}></input></td><td>:</td><td><input class = "num" type = "text" id = {count_id1 + 4}></input></td>
+                          </tr>
+                          <tr>
+                              <td class = "setnum">set3</td><td><input class = "num" type = "text" id = {count_id1 + 5}></input></td><td>:</td><td><input class = "num" type = "text" id = {count_id1 + 6}></input></td>
+                          </tr>
+                          <tr>
+                              <td class = "setnum">set4</td><td><input class = "num" type = "text" id = {count_id1 + 7}></input></td><td>:</td><td><input class = "num" type = "text" id = {count_id1 + 8}></input></td>
+                          </tr>
+                          <tr>
+                              <td class = "setnum">set5</td><td><input class = "num" type = "text" id = {count_id1 + 9}></input></td><td>:</td><td><input class = "num" type = "text" id = {count_id1 + 10}></input></td>
+                          </tr>
+                      </table>
+                      <div class = "analysis">
+                          <textarea class = "analysis_text" id = {count_id1 + 11}/>
+                      </div>
+                  </div>
+              </div>
+          );
+          for(var i = 1; i < 12 ; i++){
+              icon1_input.push(count_id1 + i)
+          }
+                          
+          ReactDOM.render(comp, document.getElementById('component1'));
+      }
+
+        function icon5(){
+          const thisid = count_id;
+          icon5_locate.push([count_id5,[0,0]])
+          const id_5 = i5;
+          const count5 = count_id5;
+          const comp = (    
+              <div>
+                  <div class = "imgonly"></div>
+                  <div class = "draggable5" id = {count_id5}>&nbsp;G R A B &nbsp; A r e a</div>
+                  <div class = "delete5"  onClick = {() => delete2(thisid)}>X</div>
+                  <div id = {i5}>
+                      <div class = "addimg2" onClick = {()=>upload_click(id_5)}>+</div>
+                  </div>
+              </div>
+          );
+          //icon2_input.push(i5);
+          i5++;
+          count_id5++;
+          ReactDOM.render(comp, document.getElementById(count_id++));
+      }
+
+        useEffect(()=>{
+          if(image!=null){
+            handleUpload();
+          }
+        },[image]);
+
         return(
         <body>
             <input type = "text" class = "setTitle" placeholder = " Title" value={title} onChange={(e)=>{setTitle(e.target.value)}}/>
@@ -350,9 +422,6 @@ function tag_remove(){
             <div class = "upload">
             
                 <input type="file" ref={hiddenFileInput} id="file" class = "file" onChange={handleChange} style={{display:"none"}}/>
-                
-                <button type="button" class = "upbutton" onClick={handleUpload}>Upload</button>
-                <button class="upload-name" onClick={(e)=>upload_click()}>{imgname}</button>
                 
             </div>
             <div class = "setCal"></div>
@@ -495,11 +564,19 @@ function Uploading(){
     }
     else{
         const url_1 = url1;
-        icon1_img = url_1;
+        var img_type="";
+        if(uploading_name=='putimg'){
+          icon1_img = url_1;
+          img_type = "image1";
+        }else{
+          icon5_input.push(url_1);
+          img_type = "image2";
+        }
+
         const comp = (
-            <img src = {url1} alt = "firebase-image" class = "image1"/>
+            <img src = {url1} alt = "firebase-image" class = {img_type}/>
             );
-        ReactDOM.render(comp, document.getElementById('putimg'));
+        ReactDOM.render(comp, document.getElementById(uploading_name));
 
     }
 
@@ -507,47 +584,6 @@ function Uploading(){
 
 //-----------------------------------------------icon1-----------------------------------------------------
 
-function icon1(){
-    const comp = (
-        <div id = "stop">
-            <div className = "draggable" id = {count_id1}>&nbsp;G R A B &nbsp; A r e a</div>
-            <div class = "delete1" id = "delete1" onClick = {()=>delete1()}></div>
-            <div class = "scoresheet">
-                <div class = "putimg" id = "putimg">
-                    <div class = "addimg" onClick = {()=>Uploading()} >+</div>
-                </div>
-                <table class = "set" >
-                    <tr>
-                        <th class = "gamescore">Game score</th>
-                    </tr>
-                    <tr>
-                        <td class = "setnum">set1</td><td><input class = "num" type = "text" id = {count_id1+1}></input></td><td width = "8px;" text-align = "center;">:</td><td><input class = "num" type = "text" id = {count_id1 + 2}></input></td>
-                    </tr>
-                    <tr>
-                        <td class = "setnum">set2</td><td><input class = "num" type = "text" id = {count_id1 + 3}></input></td><td>:</td><td><input class = "num" type = "text" id = {count_id1 + 4}></input></td>
-                    </tr>
-                    <tr>
-                        <td class = "setnum">set3</td><td><input class = "num" type = "text" id = {count_id1 + 5}></input></td><td>:</td><td><input class = "num" type = "text" id = {count_id1 + 6}></input></td>
-                    </tr>
-                    <tr>
-                        <td class = "setnum">set4</td><td><input class = "num" type = "text" id = {count_id1 + 7}></input></td><td>:</td><td><input class = "num" type = "text" id = {count_id1 + 8}></input></td>
-                    </tr>
-                    <tr>
-                        <td class = "setnum">set5</td><td><input class = "num" type = "text" id = {count_id1 + 9}></input></td><td>:</td><td><input class = "num" type = "text" id = {count_id1 + 10}></input></td>
-                    </tr>
-                </table>
-                <div class = "analysis">
-                    <textarea class = "analysis_text" id = {count_id1 + 11}/>
-                </div>
-            </div>
-        </div>
-    );
-    for(var i = 1; i < 12 ; i++){
-        icon1_input.push(count_id1 + i)
-    }
-                    
-    ReactDOM.render(comp, document.getElementById('component1'));
-}
 
 function delete1(){
     const comp = (
@@ -697,17 +733,18 @@ function icon4(){
 
 //-------------------------------------------------icon5------------------------------------------------------//
 
-function Uploading2(i5){
+function Uploading2(a){
     if(!isEmpty){
         alert("No image! Upload first!");
     }
     else{
-        const url_5 = url1
+        const url_5 = url1;
+        console.log(i5);
         icon5_input.push(url_5);
         const comp = (
             <img src = {url1} alt = "firebase-image" class = "image2"/>
             );
-        ReactDOM.render(comp, document.getElementById(i5));
+        ReactDOM.render(comp, document.getElementById(a));
     }
 
 }
@@ -760,26 +797,6 @@ function delete5(thisid,count_id5){
 
 // }
 
-function icon5(){
-    const thisid = count_id;
-    icon5_locate.push([count_id5,[0,0]])
-    const id_5 = i5;
-    const count5 = count_id5;
-    const comp = (    
-        <div>
-            <div class = "imgonly"></div>
-            <div class = "draggable5" id = {count_id5}>&nbsp;G R A B &nbsp; A r e a</div>
-            <div class = "delete5"  onClick = {() => delete2(thisid)}>X</div>
-            <div id = {i5}>
-                <div class = "addimg2" onClick = {()=>Uploading2(id_5)}>+</div>
-            </div>
-        </div>
-    );
-    //icon2_input.push(i5);
-    i5++;
-    count_id5++;
-    ReactDOM.render(comp, document.getElementById(count_id++));
-}
 
 //---------------------------------------------------drag on-----------------------------------------------------//
 //---------------------------------------------------icon1--------------------------------------------------------//
