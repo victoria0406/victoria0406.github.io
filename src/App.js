@@ -4,6 +4,8 @@ import management from './components/management';
 import challenge from './components/challenge';
 import mileage from './components/mileage';
 import win from './components/win';
+import lose from './components/lose';
+import tie from './components/tie';
 import check from './components/check';
 import Login from './components/login';
 import Group from './components/group';
@@ -28,6 +30,8 @@ function App() {
         <Route path="/challenge" exact component={challenge}/>
         <Route path="/mileage" exact component={mileage}/>
         <Route path="/win" exact component={win}/>
+        <Route path="/lose" exact component={lose}/>
+        <Route path="/tie" exact component={tie}/>
         <Route path="/check" exact component={check}/>
         <Route path="/" exact component ={Login}/>
         <Route path="/group/:id" exact component = {Group}/>
