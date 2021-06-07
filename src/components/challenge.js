@@ -17,7 +17,7 @@ function Challenge(props){
     var groupname = props.location.state.group;
     
     const [mileage, setMileage] = useState(0);
-    const [mileage1, setMileage1] = useState();
+    const [mileage1, setMileage1] = useState(0);
 
     useEffect(()=>{
         var docRef = db.collection("Groups").doc(groupname)
@@ -40,7 +40,7 @@ function Challenge(props){
     var mileagecomma=numberWithCommas(mileage);
     
 
-    const [Bet, setBet] = useState()
+    const [Bet, setBet] = useState(0)
     const [Rgroup, setRgroup] = useState("")
     const [Contents, setContents] = useState("")
 
@@ -71,13 +71,21 @@ function Challenge(props){
         setBet("");
         document.getElementById("bettinginput").focus();
     }
-
-    const top100Films = [
-        { title: 'BADMINTON LOVERS'},
-        { title: 'I LIKE BADMINTON'},
-        { title: 'CHUNGNAM BADMINTON'},
-        { title: '2018 BADMINTON'},       
-      ];
+    if(groupname == "HELLO BADMINTON"){
+        var top100Films = [
+            { title: 'BADMINTON LOVERS'},
+            { title: 'I LIKE BADMINTON'},
+            { title: 'CHUNGNAM BADMINTON'},
+            { title: '2018 BADMINTON'},       
+        ];
+    }else{
+        var top100Films = [
+            { title: 'HELLO BADMINTON'},
+            { title: 'I LIKE BADMINTON'},
+            { title: 'CHUNGNAM BADMINTON'},
+            { title: '2018 BADMINTON'},     
+        ];
+    }
     
     return(
         

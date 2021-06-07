@@ -81,7 +81,7 @@ function check(props){
         <Link to='./management'> <button className="M3">MANAGEMENT</button> </Link>
         <div className="bg"></div>
         <div className="sending-group">Sending Group</div>
-        <div className="sending-group-name">HELLO BADMINTON</div>
+        <div className="sending-group-name">{groupname}</div>
         <div className="receiving-group">Receiving Group</div>
         <div className="receiving-group-name">{props.location.state.rgroup}</div>
         <div className="Betting-mileage">Betting Mileage</div>
