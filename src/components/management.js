@@ -175,7 +175,7 @@ const MoviesPage = (props) =>{
     for (var l=0;l<mystate.length;l++){
         if(mystate[l]=="accepted"){
             const index=l;
-            gg[l].state=<div><Link to={{pathname :'./win', state : {group: props.location.state.group, user:props.location.state.user}}}><button className = "win" onClick={(e)=>win_button(index)}>WIN!</button></Link>&nbsp;&nbsp;<button className = "lose" onClick={(e)=>lose_button(index)}>LOSE</button>&nbsp;&nbsp;<button className = "tie" onClick={(e)=>tie_button(index)}>TIE</button></div>
+            gg[l].state=<div><Link to={{pathname :'./win', state : {group: props.location.state.group, user:props.location.state.user}}}><button className = "win" onClick={(e)=>win_button(index)}>WIN!</button></Link>&nbsp;&nbsp;<Link to={{pathname :'./lose', state : {group: props.location.state.group, user:props.location.state.user}}}><button className = "lose" onClick={(e)=>lose_button(index)}>LOSE</button></Link>&nbsp;&nbsp;<Link to={{pathname :'./tie', state : {group: props.location.state.group, user:props.location.state.user}}}><button className = "tie" onClick={(e)=>tie_button(index)}>TIE</button></Link></div>
         }
         else if(mystate[l]=="wait") gg[l].state=<div className="wait">Challenge Sent!</div>
         else if(mystate[l]=="receive") gg[l].state=<div><button className = "win">WIN!</button>&nbsp;&nbsp;<button className = "lose">LOSE</button>&nbsp;&nbsp;<button className = "tie">TIE</button></div>
