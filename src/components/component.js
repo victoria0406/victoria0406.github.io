@@ -270,7 +270,7 @@ function tag_remove(){
               "icon4_length" : icon4_input.length,
               "icon4_locate" : icon_loc_4,
               "icon4_input" : icon4_field,
-              "icon5_input" : icon5_input,
+              "icon5_input" : icon5_field,
               "icon5_length" : icon5_input.length,
               "icon5_locate" : icon_loc_5,
               "icon1_img" : icon1_img
@@ -396,7 +396,7 @@ function tag_remove(){
               <div>
                   <div class = "imgonly"></div>
                   <div class = "draggable5" id = {count_id5}>&nbsp;G R A B &nbsp; A r e a</div>
-                  <div class = "delete5"  onClick = {() => delete2(thisid)}>X</div>
+                  <div class = "delete5"  onClick = {() => delete5(thisid,count5)}>X</div>
                   <div id = {i5}>
                       <div class = "addimg2" onClick = {()=>upload_click(id_5)}>+</div>
                   </div>
@@ -569,7 +569,7 @@ function Uploading(){
           icon1_img = url_1;
           img_type = "image1";
         }else{
-          icon5_input.push(url_1);
+          icon5_input.push([uploading_name,url_1]);
           img_type = "image2";
         }
 
@@ -751,11 +751,12 @@ function Uploading2(a){
 
 function delete5(thisid,count_id5){
   console.log(thisid);
-  console.log(count_id5)
+  console.log(count_id5);
   ReactDOM.render(<div></div>, document.getElementById(thisid));
   for(let i = 0; i < icon5_input.length; i++) {
+    console.log(icon5_input[i][0]);
     if(icon5_input[i][0]== count_id5 + 10000)  {
-      console.log("in here")
+      console.log("in here1")
       icon5_input.splice(i, 1);
       break;
     }
