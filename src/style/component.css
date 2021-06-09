@@ -628,10 +628,9 @@
     background-color: #DDDDDD;
 }
 #get_mileage{
-    position: fixed;
     z-index: 10;
     background-color: #FFFFFF;
-    position:absolute;
+    position:fixed;
     width: 500px;
     height: 400px;
     left: 700px;
@@ -680,5 +679,5 @@
     width: 1920px;
     height: 1080px;
     display: none;
-    top:0px;
+    top:0%;
 }
